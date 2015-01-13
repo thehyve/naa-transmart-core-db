@@ -21,7 +21,6 @@ package org.transmartproject.db.dataquery.highdim
 
 import grails.orm.HibernateCriteriaBuilder
 import groovy.util.logging.Log4j
-
 import org.hibernate.ScrollMode
 import org.hibernate.engine.SessionImplementor
 import org.transmartproject.core.dataquery.TabularResult
@@ -33,9 +32,12 @@ import org.transmartproject.core.dataquery.highdim.dataconstraints.DataConstrain
 import org.transmartproject.core.dataquery.highdim.projections.Projection
 import org.transmartproject.core.exceptions.EmptySetException
 import org.transmartproject.core.exceptions.UnsupportedByDataTypeException
+import org.transmartproject.core.ontology.OntologyTerm
+import org.transmartproject.core.querytool.QueryResult
 import org.transmartproject.db.dataquery.highdim.assayconstraints.MarkerTypeConstraint
 import org.transmartproject.db.dataquery.highdim.dataconstraints.CriteriaDataConstraint
 import org.transmartproject.db.dataquery.highdim.projections.CriteriaProjection
+import org.transmartproject.db.ontology.I2b2
 
 @Log4j
 class HighDimensionDataTypeResourceImpl implements HighDimensionDataTypeResource {
@@ -72,7 +74,7 @@ class HighDimensionDataTypeResourceImpl implements HighDimensionDataTypeResource
                                  Projection projection) {
 
         List<AssayColumn> assays = retrieveAssays(assayConstraints)
-
+                                                                  
         HibernateCriteriaBuilder criteriaBuilder =
             module.prepareDataQuery(assays, projection, openSession())
 
@@ -162,5 +164,19 @@ class HighDimensionDataTypeResourceImpl implements HighDimensionDataTypeResource
     @Override
     boolean matchesPlatform(Platform platform) {
         platform.markerType in module.platformMarkerTypes
+    }
+
+    @Override
+    Set<OntologyTerm> getAllOntologyTermsForDataTypeBy(QueryResult queryResult) {
+        I2b2.executeQuery '''
+            select
+                distinct t
+            from QtPatientSetCollection ps, I2b2 t, DeSubjectSampleMapping ssm
+            inner join ssm.platform as p
+            where p.markerType in (:markerTypes)
+                and ssm.conceptCode = t.code
+                and ssm.patient = ps.patient
+                and ps.resultInstance.id = :resultInstanceId
+        ''', [markerTypes : module.platformMarkerTypes, resultInstanceId: queryResult.id]
     }
 }
