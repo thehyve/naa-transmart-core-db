@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/grails-app/domain/org/transmartproject/db/i2b2data
+END
+ObservationFact.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/grails-app/domain/org/transmartproject/db/i2b2data/ObservationFact.groovy
+END
+I2b2TrialNodes.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/grails-app/domain/org/transmartproject/db/i2b2data/I2b2TrialNodes.groovy
+END
+PatientDimension.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/grails-app/domain/org/transmartproject/db/i2b2data/PatientDimension.groovy
+END
+ConceptDimension.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/grails-app/domain/org/transmartproject/db/i2b2data/ConceptDimension.groovy
+END
+PatientTrialCoreDb.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/grails-app/domain/org/transmartproject/db/i2b2data/PatientTrialCoreDb.groovy
+END

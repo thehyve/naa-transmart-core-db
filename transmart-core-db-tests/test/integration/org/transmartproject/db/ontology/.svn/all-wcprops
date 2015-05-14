@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/transmart-core-db-tests/test/integration/org/transmartproject/db/ontology
+END
+AcrossTrialsConceptsResourceTests.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 165
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/transmart-core-db-tests/test/integration/org/transmartproject/db/ontology/AcrossTrialsConceptsResourceTests.groovy
+END
+AcrossTrialsOntologyTermTests.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 161
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/transmart-core-db-tests/test/integration/org/transmartproject/db/ontology/AcrossTrialsOntologyTermTests.groovy
+END
+I2b2Tests.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/transmart-core-db-tests/test/integration/org/transmartproject/db/ontology/I2b2Tests.groovy
+END
+StudyImplTests.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 146
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/transmart-core-db-tests/test/integration/org/transmartproject/db/ontology/StudyImplTests.groovy
+END
+DefaultConceptsResourceTests.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 160
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/transmart-core-db-tests/test/integration/org/transmartproject/db/ontology/DefaultConceptsResourceTests.groovy
+END
+StudiesResourceServiceTests.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 159
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/transmart-core-db-tests/test/integration/org/transmartproject/db/ontology/StudiesResourceServiceTests.groovy
+END
+TableAccessTests.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 148
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/transmart-core-db-tests/test/integration/org/transmartproject/db/ontology/TableAccessTests.groovy
+END

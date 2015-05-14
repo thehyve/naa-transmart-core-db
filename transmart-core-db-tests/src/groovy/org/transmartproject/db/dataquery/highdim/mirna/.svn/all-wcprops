@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/transmart-core-db-tests/src/groovy/org/transmartproject/db/dataquery/highdim/mirna
+END
+MirnaTestData.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 154
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/transmart-core-db-tests/src/groovy/org/transmartproject/db/dataquery/highdim/mirna/MirnaTestData.groovy
+END
+MirnaQpcrTestData.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 158
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/transmart-core-db-tests/src/groovy/org/transmartproject/db/dataquery/highdim/mirna/MirnaQpcrTestData.groovy
+END
+MirnaSeqTestData.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 157
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/transmart-core-db-tests/src/groovy/org/transmartproject/db/dataquery/highdim/mirna/MirnaSeqTestData.groovy
+END

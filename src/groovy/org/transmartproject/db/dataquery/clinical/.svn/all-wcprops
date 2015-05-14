@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/src/groovy/org/transmartproject/db/dataquery/clinical
+END
+InnerClinicalTabularResultFactory.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 145
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/src/groovy/org/transmartproject/db/dataquery/clinical/InnerClinicalTabularResultFactory.groovy
+END
+PatientIdAnnotatedDataRow.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/src/groovy/org/transmartproject/db/dataquery/clinical/PatientIdAnnotatedDataRow.groovy
+END
+PatientRowImpl.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/src/groovy/org/transmartproject/db/dataquery/clinical/PatientRowImpl.groovy
+END
+TerminalConceptVariablesDataQuery.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 146
+/svn/repos/pfizer_2_0/!svn/ver/34/transmart-core-db/src/groovy/org/transmartproject/db/dataquery/clinical/TerminalConceptVariablesDataQuery.groovy
+END
+AcrossTrialsDataQuery.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/src/groovy/org/transmartproject/db/dataquery/clinical/AcrossTrialsDataQuery.groovy
+END
+TerminalClinicalVariablesTabularResult.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 150
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/src/groovy/org/transmartproject/db/dataquery/clinical/TerminalClinicalVariablesTabularResult.groovy
+END
+ClinicalDataTabularResult.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/src/groovy/org/transmartproject/db/dataquery/clinical/ClinicalDataTabularResult.groovy
+END

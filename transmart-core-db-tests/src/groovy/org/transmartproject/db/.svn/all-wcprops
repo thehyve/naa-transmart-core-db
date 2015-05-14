@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/transmart-core-db-tests/src/groovy/org/transmartproject/db
+END
+TestData.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/transmart-core-db-tests/src/groovy/org/transmartproject/db/TestData.groovy
+END
+TestDataHelper.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/transmart-core-db-tests/src/groovy/org/transmartproject/db/TestDataHelper.groovy
+END

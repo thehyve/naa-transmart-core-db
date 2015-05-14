@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/transmart-core-db-tests/grails-app/conf
+END
+DataSource.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/transmart-core-db-tests/grails-app/conf/DataSource.groovy
+END
+UrlMappings.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/transmart-core-db-tests/grails-app/conf/UrlMappings.groovy
+END
+Config.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/transmart-core-db-tests/grails-app/conf/Config.groovy
+END
+BuildConfig.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/transmart-core-db-tests/grails-app/conf/BuildConfig.groovy
+END

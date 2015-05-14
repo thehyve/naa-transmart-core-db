@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/src/groovy/org/transmartproject/db/dataquery/highdim/metabolite
+END
+MetaboliteModule.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/src/groovy/org/transmartproject/db/dataquery/highdim/metabolite/MetaboliteModule.groovy
+END
+MetaboliteDataRow.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 139
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/src/groovy/org/transmartproject/db/dataquery/highdim/metabolite/MetaboliteDataRow.groovy
+END

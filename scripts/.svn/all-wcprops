@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/scripts
+END
+_Install.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/scripts/_Install.groovy
+END
+_Uninstall.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/scripts/_Uninstall.groovy
+END
+_Upgrade.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/scripts/_Upgrade.groovy
+END

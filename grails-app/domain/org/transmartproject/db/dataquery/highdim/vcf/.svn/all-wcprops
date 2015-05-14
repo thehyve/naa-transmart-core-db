@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/grails-app/domain/org/transmartproject/db/dataquery/highdim/vcf
+END
+DeVariantSubjectSummaryCoreDb.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 151
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/grails-app/domain/org/transmartproject/db/dataquery/highdim/vcf/DeVariantSubjectSummaryCoreDb.groovy
+END
+DeVariantSubjectDetailCoreDb.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 150
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/grails-app/domain/org/transmartproject/db/dataquery/highdim/vcf/DeVariantSubjectDetailCoreDb.groovy
+END
+DeVariantSubjectIdxCoreDb.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 147
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/grails-app/domain/org/transmartproject/db/dataquery/highdim/vcf/DeVariantSubjectIdxCoreDb.groovy
+END
+DeVariantDatasetCoreDb.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 144
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/grails-app/domain/org/transmartproject/db/dataquery/highdim/vcf/DeVariantDatasetCoreDb.groovy
+END

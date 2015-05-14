@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/src/groovy/org/transmartproject/db/dataquery/highdim/projections
+END
+AllDataProjectionImpl.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 144
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/src/groovy/org/transmartproject/db/dataquery/highdim/projections/AllDataProjectionImpl.groovy
+END
+SimpleRealProjection.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/src/groovy/org/transmartproject/db/dataquery/highdim/projections/SimpleRealProjection.groovy
+END
+CriteriaProjection.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/src/groovy/org/transmartproject/db/dataquery/highdim/projections/CriteriaProjection.groovy
+END

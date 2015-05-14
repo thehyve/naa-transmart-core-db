@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/transmart-core-db-tests/test/unit/org/transmartproject/db/dataquery/highdim/vcf
+END
+VcfDataRowTests.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 153
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/transmart-core-db-tests/test/unit/org/transmartproject/db/dataquery/highdim/vcf/VcfDataRowTests.groovy
+END
+VcfCohortStatisticsTests.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 162
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/transmart-core-db-tests/test/unit/org/transmartproject/db/dataquery/highdim/vcf/VcfCohortStatisticsTests.groovy
+END

@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/transmart-core-db-tests/test/integration/org/transmartproject/db/querytool
+END
+QueriesResourceAcrossTrialsTests.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 165
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/transmart-core-db-tests/test/integration/org/transmartproject/db/querytool/QueriesResourceAcrossTrialsTests.groovy
+END
+QueriesResourceServiceTests.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 160
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/transmart-core-db-tests/test/integration/org/transmartproject/db/querytool/QueriesResourceServiceTests.groovy
+END

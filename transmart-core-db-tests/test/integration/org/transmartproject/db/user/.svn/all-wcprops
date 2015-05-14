@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/transmart-core-db-tests/test/integration/org/transmartproject/db/user
+END
+UserAccessLevelTests.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 148
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/transmart-core-db-tests/test/integration/org/transmartproject/db/user/UserAccessLevelTests.groovy
+END
+UserAccessLevelAcrossTrialTests.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 159
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/transmart-core-db-tests/test/integration/org/transmartproject/db/user/UserAccessLevelAcrossTrialTests.groovy
+END

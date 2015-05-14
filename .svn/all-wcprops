@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/repos/pfizer_2_0/!svn/ver/8/transmart-core-db
+END
+grails-transmart-core-1.2.2.zip
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/grails-transmart-core-1.2.2.zip
+END
+LICENSE
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/LICENSE
+END
+application.properties
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/application.properties
+END
+TransmartCoreGrailsPlugin.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/TransmartCoreGrailsPlugin.groovy
+END
+.travis.yml
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/.travis.yml
+END
+.gitignore
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/.gitignore
+END
+README.md
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/README.md
+END
+clover_id_rsa.enc
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/clover_id_rsa.enc
+END
+.gitattributes
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/.gitattributes
+END
+.project
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/.project
+END
+plugin.xml
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/plugin.xml
+END
+publish_clover
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/publish_clover
+END
+.classpath
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/.classpath
+END

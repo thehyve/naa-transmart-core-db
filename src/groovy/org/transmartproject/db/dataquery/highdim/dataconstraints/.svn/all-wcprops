@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/src/groovy/org/transmartproject/db/dataquery/highdim/dataconstraints
+END
+PropertyDataConstraint.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 149
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/src/groovy/org/transmartproject/db/dataquery/highdim/dataconstraints/PropertyDataConstraint.groovy
+END
+DisjunctionDataConstraint.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 152
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/src/groovy/org/transmartproject/db/dataquery/highdim/dataconstraints/DisjunctionDataConstraint.groovy
+END
+NoopDataConstraint.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 145
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/src/groovy/org/transmartproject/db/dataquery/highdim/dataconstraints/NoopDataConstraint.groovy
+END
+CriteriaDataConstraint.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 149
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/src/groovy/org/transmartproject/db/dataquery/highdim/dataconstraints/CriteriaDataConstraint.groovy
+END

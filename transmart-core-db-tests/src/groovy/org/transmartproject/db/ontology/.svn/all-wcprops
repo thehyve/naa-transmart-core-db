@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/transmart-core-db-tests/src/groovy/org/transmartproject/db/ontology
+END
+AcrossTrialsTestData.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 146
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/transmart-core-db-tests/src/groovy/org/transmartproject/db/ontology/AcrossTrialsTestData.groovy
+END
+StudyTestData.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 139
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/transmart-core-db-tests/src/groovy/org/transmartproject/db/ontology/StudyTestData.groovy
+END
+ConceptTestData.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/transmart-core-db-tests/src/groovy/org/transmartproject/db/ontology/ConceptTestData.groovy
+END

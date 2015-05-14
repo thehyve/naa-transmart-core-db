@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/transmart-core-db-tests/test/unit/org/transmartproject/db/dataquery/highdim
+END
+DefaultHighDimensionTabularResultTests.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 172
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/transmart-core-db-tests/test/unit/org/transmartproject/db/dataquery/highdim/DefaultHighDimensionTabularResultTests.groovy
+END
+MultiValueProjectionTests.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 159
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/transmart-core-db-tests/test/unit/org/transmartproject/db/dataquery/highdim/MultiValueProjectionTests.groovy
+END
+RepeatedEntriesCollectingTabularResultTests.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 177
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/transmart-core-db-tests/test/unit/org/transmartproject/db/dataquery/highdim/RepeatedEntriesCollectingTabularResultTests.groovy
+END
+HighDimensionResourceTests.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 160
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/transmart-core-db-tests/test/unit/org/transmartproject/db/dataquery/highdim/HighDimensionResourceTests.groovy
+END

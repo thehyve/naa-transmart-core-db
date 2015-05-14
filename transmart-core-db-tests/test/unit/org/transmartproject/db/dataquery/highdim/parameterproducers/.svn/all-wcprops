@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 145
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/transmart-core-db-tests/test/unit/org/transmartproject/db/dataquery/highdim/parameterproducers
+END
+MapBasedParameterFactoryTests.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 182
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/transmart-core-db-tests/test/unit/org/transmartproject/db/dataquery/highdim/parameterproducers/MapBasedParameterFactoryTests.groovy
+END
+AbstractMethodBasedParameterFactoryTests.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 193
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/transmart-core-db-tests/test/unit/org/transmartproject/db/dataquery/highdim/parameterproducers/AbstractMethodBasedParameterFactoryTests.groovy
+END
+DisjunctionDataConstraintFactoryTests.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 190
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/transmart-core-db-tests/test/unit/org/transmartproject/db/dataquery/highdim/parameterproducers/DisjunctionDataConstraintFactoryTests.groovy
+END
+StandardAssayConstraintFactoryTests.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 188
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/transmart-core-db-tests/test/unit/org/transmartproject/db/dataquery/highdim/parameterproducers/StandardAssayConstraintFactoryTests.groovy
+END

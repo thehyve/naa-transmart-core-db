@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/grails-app/services/org/transmartproject/db/querytool
+END
+QueryDefinitionXmlService.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/grails-app/services/org/transmartproject/db/querytool/QueryDefinitionXmlService.groovy
+END
+PatientSetQueryBuilderService.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/grails-app/services/org/transmartproject/db/querytool/PatientSetQueryBuilderService.groovy
+END
+QueriesResourceService.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/grails-app/services/org/transmartproject/db/querytool/QueriesResourceService.groovy
+END

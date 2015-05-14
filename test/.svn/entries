@@ -1,0 +1,34 @@
+10
+
+dir
+9
+https://pfizer.collab.net/svn/repos/pfizer_2_0/transmart-core-db/test
+https://pfizer.collab.net/svn/repos/pfizer_2_0
+
+
+
+2014-11-26T02:02:30.213385Z
+9
+berubh
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+ce8fff06-d8af-4ed1-80fd-e911f56ee515
+
+integration
+dir
+
+unit
+dir
+

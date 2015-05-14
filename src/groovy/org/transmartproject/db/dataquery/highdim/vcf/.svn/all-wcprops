@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/src/groovy/org/transmartproject/db/dataquery/highdim/vcf
+END
+VcfDataRow.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/src/groovy/org/transmartproject/db/dataquery/highdim/vcf/VcfDataRow.groovy
+END
+VcfModule.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/src/groovy/org/transmartproject/db/dataquery/highdim/vcf/VcfModule.groovy
+END
+CohortProjection.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/src/groovy/org/transmartproject/db/dataquery/highdim/vcf/CohortProjection.groovy
+END
+VariantProjection.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/src/groovy/org/transmartproject/db/dataquery/highdim/vcf/VariantProjection.groovy
+END
+VcfCohortStatistics.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/src/groovy/org/transmartproject/db/dataquery/highdim/vcf/VcfCohortStatistics.groovy
+END

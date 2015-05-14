@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/src/groovy/org/transmartproject/db/dataquery/highdim/parameterproducers
+END
+BindingUtils.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 142
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/src/groovy/org/transmartproject/db/dataquery/highdim/parameterproducers/BindingUtils.groovy
+END
+DataRetrievalParameterFactory.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 159
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/src/groovy/org/transmartproject/db/dataquery/highdim/parameterproducers/DataRetrievalParameterFactory.groovy
+END
+DisjunctionConstraintFactory.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 158
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/src/groovy/org/transmartproject/db/dataquery/highdim/parameterproducers/DisjunctionConstraintFactory.groovy
+END
+MapBasedParameterFactory.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 154
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/src/groovy/org/transmartproject/db/dataquery/highdim/parameterproducers/MapBasedParameterFactory.groovy
+END
+ProducerFor.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/src/groovy/org/transmartproject/db/dataquery/highdim/parameterproducers/ProducerFor.groovy
+END
+SimpleRealProjectionsFactory.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 158
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/src/groovy/org/transmartproject/db/dataquery/highdim/parameterproducers/SimpleRealProjectionsFactory.groovy
+END
+StandardDataConstraintFactory.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 159
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/src/groovy/org/transmartproject/db/dataquery/highdim/parameterproducers/StandardDataConstraintFactory.groovy
+END
+AbstractMethodBasedParameterFactory.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 165
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/src/groovy/org/transmartproject/db/dataquery/highdim/parameterproducers/AbstractMethodBasedParameterFactory.groovy
+END
+StandardAssayConstraintFactory.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 160
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/src/groovy/org/transmartproject/db/dataquery/highdim/parameterproducers/StandardAssayConstraintFactory.groovy
+END
+AllDataProjectionFactory.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 154
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/src/groovy/org/transmartproject/db/dataquery/highdim/parameterproducers/AllDataProjectionFactory.groovy
+END

@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/transmart-core-db-tests/test/integration/org/transmartproject/db/dataquery/highdim/mrna
+END
+MrnaEndToEndRetrievalTests.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 172
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/transmart-core-db-tests/test/integration/org/transmartproject/db/dataquery/highdim/mrna/MrnaEndToEndRetrievalTests.groovy
+END
+MrnaDataRetrievalTests.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 168
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/transmart-core-db-tests/test/integration/org/transmartproject/db/dataquery/highdim/mrna/MrnaDataRetrievalTests.groovy
+END
+MrnaGeneDataConstraintTests.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 173
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/transmart-core-db-tests/test/integration/org/transmartproject/db/dataquery/highdim/mrna/MrnaGeneDataConstraintTests.groovy
+END

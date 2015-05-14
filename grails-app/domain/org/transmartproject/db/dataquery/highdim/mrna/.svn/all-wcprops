@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/grails-app/domain/org/transmartproject/db/dataquery/highdim/mrna
+END
+DeSubjectMicroarrayDataCoreDb.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 152
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/grails-app/domain/org/transmartproject/db/dataquery/highdim/mrna/DeSubjectMicroarrayDataCoreDb.groovy
+END
+DeMrnaAnnotationCoreDb.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 145
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/grails-app/domain/org/transmartproject/db/dataquery/highdim/mrna/DeMrnaAnnotationCoreDb.groovy
+END

@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/grails-app/domain/org/transmartproject/db/ontology
+END
+ModifierDimensionCoreDb.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/grails-app/domain/org/transmartproject/db/ontology/ModifierDimensionCoreDb.groovy
+END
+I2b2.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/grails-app/domain/org/transmartproject/db/ontology/I2b2.groovy
+END
+ModifierDimensionView.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/grails-app/domain/org/transmartproject/db/ontology/ModifierDimensionView.groovy
+END
+Birn.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/grails-app/domain/org/transmartproject/db/ontology/Birn.groovy
+END
+ModifierMetadataCoreDb.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/grails-app/domain/org/transmartproject/db/ontology/ModifierMetadataCoreDb.groovy
+END
+TableAccess.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/grails-app/domain/org/transmartproject/db/ontology/TableAccess.groovy
+END
+I2b2Secure.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/grails-app/domain/org/transmartproject/db/ontology/I2b2Secure.groovy
+END

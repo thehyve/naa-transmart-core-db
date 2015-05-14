@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/src/groovy/org/transmartproject/db/dataquery/highdim
+END
+RepeatedEntriesCollectingTabularResult.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 149
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/src/groovy/org/transmartproject/db/dataquery/highdim/RepeatedEntriesCollectingTabularResult.groovy
+END
+DefaultHighDimensionTabularResult.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 144
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/src/groovy/org/transmartproject/db/dataquery/highdim/DefaultHighDimensionTabularResult.groovy
+END
+HighDimensionDataTypeResourceImpl.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 144
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/src/groovy/org/transmartproject/db/dataquery/highdim/HighDimensionDataTypeResourceImpl.groovy
+END
+HighDimensionDataTypeModule.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/src/groovy/org/transmartproject/db/dataquery/highdim/HighDimensionDataTypeModule.groovy
+END
+HighDimensionResourceService.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 139
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/src/groovy/org/transmartproject/db/dataquery/highdim/HighDimensionResourceService.groovy
+END
+AbstractHighDimensionDataTypeModule.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 146
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/src/groovy/org/transmartproject/db/dataquery/highdim/AbstractHighDimensionDataTypeModule.groovy
+END
+AssayColumnImpl.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/src/groovy/org/transmartproject/db/dataquery/highdim/AssayColumnImpl.groovy
+END
+AssayQuery.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/src/groovy/org/transmartproject/db/dataquery/highdim/AssayQuery.groovy
+END
+AbstractDataRow.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/src/groovy/org/transmartproject/db/dataquery/highdim/AbstractDataRow.groovy
+END

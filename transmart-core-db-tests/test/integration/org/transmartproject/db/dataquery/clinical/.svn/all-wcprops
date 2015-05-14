@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/transmart-core-db-tests/test/integration/org/transmartproject/db/dataquery/clinical
+END
+ClinicalDataRetrievalTests.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 168
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/transmart-core-db-tests/test/integration/org/transmartproject/db/dataquery/clinical/ClinicalDataRetrievalTests.groovy
+END
+PatientsResourceServiceTests.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 170
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/transmart-core-db-tests/test/integration/org/transmartproject/db/dataquery/clinical/PatientsResourceServiceTests.groovy
+END
+AcrossTrialsDataRetrievalTests.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 172
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/transmart-core-db-tests/test/integration/org/transmartproject/db/dataquery/clinical/AcrossTrialsDataRetrievalTests.groovy
+END
+ComposedVariablesCreationTests.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 172
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/transmart-core-db-tests/test/integration/org/transmartproject/db/dataquery/clinical/ComposedVariablesCreationTests.groovy
+END

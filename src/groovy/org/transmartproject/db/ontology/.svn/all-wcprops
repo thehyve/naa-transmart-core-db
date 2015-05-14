@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/src/groovy/org/transmartproject/db/ontology
+END
+AbstractI2b2Metadata.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/src/groovy/org/transmartproject/db/ontology/AbstractI2b2Metadata.groovy
+END
+DefaultConceptsResource.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/src/groovy/org/transmartproject/db/ontology/DefaultConceptsResource.groovy
+END
+AbstractAcrossTrialsOntologyTerm.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/src/groovy/org/transmartproject/db/ontology/AbstractAcrossTrialsOntologyTerm.groovy
+END
+StudyImpl.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/src/groovy/org/transmartproject/db/ontology/StudyImpl.groovy
+END
+AcrossTrialsOntologyTerm.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/src/groovy/org/transmartproject/db/ontology/AcrossTrialsOntologyTerm.groovy
+END
+AcrossTrialsConceptsResourceDecorator.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 139
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/src/groovy/org/transmartproject/db/ontology/AcrossTrialsConceptsResourceDecorator.groovy
+END
+MetadataSelectQuerySpecification.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/src/groovy/org/transmartproject/db/ontology/MetadataSelectQuerySpecification.groovy
+END
+AcrossTrialsTopTerm.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/src/groovy/org/transmartproject/db/ontology/AcrossTrialsTopTerm.groovy
+END
+AbstractQuerySpecifyingType.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/repos/pfizer_2_0/!svn/ver/34/transmart-core-db/src/groovy/org/transmartproject/db/ontology/AbstractQuerySpecifyingType.groovy
+END

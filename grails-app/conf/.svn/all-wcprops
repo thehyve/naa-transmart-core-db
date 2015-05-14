@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/grails-app/conf
+END
+DataSource.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/grails-app/conf/DataSource.groovy
+END
+UrlMappings.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/grails-app/conf/UrlMappings.groovy
+END
+Config.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/grails-app/conf/Config.groovy
+END
+BuildConfig.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/grails-app/conf/BuildConfig.groovy
+END

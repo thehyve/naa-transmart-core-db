@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/src/groovy/org/transmartproject/db/dataquery/highdim/correlations
+END
+CorrelationType.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 139
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/src/groovy/org/transmartproject/db/dataquery/highdim/correlations/CorrelationType.groovy
+END
+SearchKeywordDataConstraint.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 151
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/src/groovy/org/transmartproject/db/dataquery/highdim/correlations/SearchKeywordDataConstraint.groovy
+END
+CorrelationTypesRegistry.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 148
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/src/groovy/org/transmartproject/db/dataquery/highdim/correlations/CorrelationTypesRegistry.groovy
+END
+SearchKeywordDataConstraintFactory.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 158
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/src/groovy/org/transmartproject/db/dataquery/highdim/correlations/SearchKeywordDataConstraintFactory.groovy
+END
+CorrelatedBiomarkersDataConstraint.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 158
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/src/groovy/org/transmartproject/db/dataquery/highdim/correlations/CorrelatedBiomarkersDataConstraint.groovy
+END

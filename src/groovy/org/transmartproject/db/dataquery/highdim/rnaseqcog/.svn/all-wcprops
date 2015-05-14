@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/src/groovy/org/transmartproject/db/dataquery/highdim/rnaseqcog
+END
+RnaSeqCogDataRow.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/src/groovy/org/transmartproject/db/dataquery/highdim/rnaseqcog/RnaSeqCogDataRow.groovy
+END
+RnaSeqCogModule.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/src/groovy/org/transmartproject/db/dataquery/highdim/rnaseqcog/RnaSeqCogModule.groovy
+END

@@ -1,0 +1,126 @@
+10
+
+dir
+9
+https://pfizer.collab.net/svn/repos/pfizer_2_0/transmart-core-db/grails-app/domain/org/transmartproject/db/dataquery/highdim
+https://pfizer.collab.net/svn/repos/pfizer_2_0
+
+
+
+2014-11-26T02:02:30.213385Z
+9
+berubh
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+ce8fff06-d8af-4ed1-80fd-e911f56ee515
+
+DeGplInfo.groovy
+file
+
+
+
+
+2014-10-22T18:49:33.000000Z
+f7074590ea28b3650076c9fa84faaad6
+2014-11-26T02:02:30.213385Z
+9
+berubh
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1709
+
+DeSubjectSampleMapping.groovy
+file
+
+
+
+
+2014-10-22T18:49:33.000000Z
+faf58c310fbbf6b6004e10a58edea125
+2014-11-26T02:02:30.213385Z
+9
+berubh
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4286
+
+acgh
+dir
+
+chromoregion
+dir
+
+metabolite
+dir
+
+mirna
+dir
+
+mrna
+dir
+
+protein
+dir
+
+rbm
+dir
+
+rnaseq
+dir
+
+rnaseqcog
+dir
+
+vcf
+dir
+

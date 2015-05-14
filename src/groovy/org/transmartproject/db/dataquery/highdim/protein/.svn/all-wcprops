@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/src/groovy/org/transmartproject/db/dataquery/highdim/protein
+END
+ProteinModule.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/src/groovy/org/transmartproject/db/dataquery/highdim/protein/ProteinModule.groovy
+END
+ProteinDataRow.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/src/groovy/org/transmartproject/db/dataquery/highdim/protein/ProteinDataRow.groovy
+END

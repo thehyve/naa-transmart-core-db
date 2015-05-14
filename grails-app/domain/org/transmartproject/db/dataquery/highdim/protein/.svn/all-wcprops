@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/grails-app/domain/org/transmartproject/db/dataquery/highdim/protein
+END
+DeSubjectProteinData.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 146
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/grails-app/domain/org/transmartproject/db/dataquery/highdim/protein/DeSubjectProteinData.groovy
+END
+DeProteinAnnotation.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 145
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/grails-app/domain/org/transmartproject/db/dataquery/highdim/protein/DeProteinAnnotation.groovy
+END

@@ -1,0 +1,77 @@
+<plugin name='transmart-core' version='1.2.2' grailsVersion='2.3.7 &gt; *'>
+  <author>Transmart Foundation</author>
+  <authorEmail>admin@transmartproject.org</authorEmail>
+  <title>Transmart Core DB Plugin</title>
+  <description>A runtime dependency for tranSMART that implements the Core API
+</description>
+  <documentation>http://transmartproject.org</documentation>
+  <type>TransmartCoreGrailsPlugin</type>
+  <resources>
+    <resource>org.transmartproject.db.ontology.http.BusinessExceptionController</resource>
+    <resource>org.transmartproject.db.accesscontrol.AccessLevel</resource>
+    <resource>org.transmartproject.db.accesscontrol.SecuredObject</resource>
+    <resource>org.transmartproject.db.accesscontrol.SecuredObjectAccess</resource>
+    <resource>org.transmartproject.db.accesscontrol.SecuredObjectAccessView</resource>
+    <resource>org.transmartproject.db.bioassay.BioAssayDataAnnotationCoreDb</resource>
+    <resource>org.transmartproject.db.bioassay.BioAssayFeatureGroupCoreDb</resource>
+    <resource>org.transmartproject.db.biomarker.BioDataCorrelDescr</resource>
+    <resource>org.transmartproject.db.biomarker.BioDataCorrelationCoreDb</resource>
+    <resource>org.transmartproject.db.biomarker.BioMarkerCoreDb</resource>
+    <resource>org.transmartproject.db.biomarker.BioMarkerCorrelMv</resource>
+    <resource>org.transmartproject.db.dataquery.highdim.DeGplInfo</resource>
+    <resource>org.transmartproject.db.dataquery.highdim.DeSubjectSampleMapping</resource>
+    <resource>org.transmartproject.db.dataquery.highdim.acgh.DeSubjectAcghData</resource>
+    <resource>org.transmartproject.db.dataquery.highdim.chromoregion.DeChromosomalRegion</resource>
+    <resource>org.transmartproject.db.dataquery.highdim.metabolite.DeMetaboliteAnnotation</resource>
+    <resource>org.transmartproject.db.dataquery.highdim.metabolite.DeMetaboliteSubPathway</resource>
+    <resource>org.transmartproject.db.dataquery.highdim.metabolite.DeMetaboliteSuperPathway</resource>
+    <resource>org.transmartproject.db.dataquery.highdim.metabolite.DeSubjectMetabolomicsData</resource>
+    <resource>org.transmartproject.db.dataquery.highdim.mirna.DeQpcrMirnaAnnotation</resource>
+    <resource>org.transmartproject.db.dataquery.highdim.mirna.DeSubjectMirnaData</resource>
+    <resource>org.transmartproject.db.dataquery.highdim.mrna.DeMrnaAnnotationCoreDb</resource>
+    <resource>org.transmartproject.db.dataquery.highdim.mrna.DeSubjectMicroarrayDataCoreDb</resource>
+    <resource>org.transmartproject.db.dataquery.highdim.protein.DeProteinAnnotation</resource>
+    <resource>org.transmartproject.db.dataquery.highdim.protein.DeSubjectProteinData</resource>
+    <resource>org.transmartproject.db.dataquery.highdim.rbm.DeRbmAnnotation</resource>
+    <resource>org.transmartproject.db.dataquery.highdim.rbm.DeSubjectRbmData</resource>
+    <resource>org.transmartproject.db.dataquery.highdim.rnaseq.DeSubjectRnaseqData</resource>
+    <resource>org.transmartproject.db.dataquery.highdim.rnaseqcog.DeRnaseqAnnotation</resource>
+    <resource>org.transmartproject.db.dataquery.highdim.rnaseqcog.DeSubjectRnaData</resource>
+    <resource>org.transmartproject.db.dataquery.highdim.vcf.DeVariantDatasetCoreDb</resource>
+    <resource>org.transmartproject.db.dataquery.highdim.vcf.DeVariantSubjectDetailCoreDb</resource>
+    <resource>org.transmartproject.db.dataquery.highdim.vcf.DeVariantSubjectIdxCoreDb</resource>
+    <resource>org.transmartproject.db.dataquery.highdim.vcf.DeVariantSubjectSummaryCoreDb</resource>
+    <resource>org.transmartproject.db.i2b2data.ConceptDimension</resource>
+    <resource>org.transmartproject.db.i2b2data.I2b2TrialNodes</resource>
+    <resource>org.transmartproject.db.i2b2data.ObservationFact</resource>
+    <resource>org.transmartproject.db.i2b2data.PatientDimension</resource>
+    <resource>org.transmartproject.db.i2b2data.PatientTrialCoreDb</resource>
+    <resource>org.transmartproject.db.ontology.Birn</resource>
+    <resource>org.transmartproject.db.ontology.I2b2</resource>
+    <resource>org.transmartproject.db.ontology.I2b2Secure</resource>
+    <resource>org.transmartproject.db.ontology.ModifierDimensionCoreDb</resource>
+    <resource>org.transmartproject.db.ontology.ModifierDimensionView</resource>
+    <resource>org.transmartproject.db.ontology.ModifierMetadataCoreDb</resource>
+    <resource>org.transmartproject.db.ontology.TableAccess</resource>
+    <resource>org.transmartproject.db.querytool.QtPatientSetCollection</resource>
+    <resource>org.transmartproject.db.querytool.QtQueryInstance</resource>
+    <resource>org.transmartproject.db.querytool.QtQueryMaster</resource>
+    <resource>org.transmartproject.db.querytool.QtQueryResultInstance</resource>
+    <resource>org.transmartproject.db.search.SearchBioMarkerCorrelationView</resource>
+    <resource>org.transmartproject.db.search.SearchGeneSignature</resource>
+    <resource>org.transmartproject.db.search.SearchGeneSignatureItem</resource>
+    <resource>org.transmartproject.db.search.SearchKeywordCoreDb</resource>
+    <resource>org.transmartproject.db.user.Group</resource>
+    <resource>org.transmartproject.db.user.PrincipalCoreDb</resource>
+    <resource>org.transmartproject.db.user.RoleCoreDb</resource>
+    <resource>org.transmartproject.db.user.User</resource>
+    <resource>org.transmartproject.db.clinical.ClinicalDataResourceService</resource>
+    <resource>org.transmartproject.db.clinical.PatientsResourceService</resource>
+    <resource>org.transmartproject.db.ontology.StudiesResourceService</resource>
+    <resource>org.transmartproject.db.querytool.PatientSetQueryBuilderService</resource>
+    <resource>org.transmartproject.db.querytool.QueriesResourceService</resource>
+    <resource>org.transmartproject.db.querytool.QueryDefinitionXmlService</resource>
+    <resource>org.transmartproject.db.support.DatabasePortabilityService</resource>
+    <resource>org.transmartproject.db.user.UsersResourceService</resource>
+  </resources>
+</plugin>

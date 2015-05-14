@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/transmart-core-db-tests/src/groovy/org/transmartproject/db/dataquery/highdim
+END
+SampleHighDimTestData.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 156
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/transmart-core-db-tests/src/groovy/org/transmartproject/db/dataquery/highdim/SampleHighDimTestData.groovy
+END
+AssayTestData.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 148
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/transmart-core-db-tests/src/groovy/org/transmartproject/db/dataquery/highdim/AssayTestData.groovy
+END
+SampleBioMarkerTestData.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 158
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/transmart-core-db-tests/src/groovy/org/transmartproject/db/dataquery/highdim/SampleBioMarkerTestData.groovy
+END
+HighDimTestData.groovy
+K 25
+svn:wc:ra_dav:version-url
+V 150
+/svn/repos/pfizer_2_0/!svn/ver/9/transmart-core-db/transmart-core-db-tests/src/groovy/org/transmartproject/db/dataquery/highdim/HighDimTestData.groovy
+END
