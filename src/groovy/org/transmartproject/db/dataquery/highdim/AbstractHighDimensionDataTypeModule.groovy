@@ -39,6 +39,8 @@ abstract class AbstractHighDimensionDataTypeModule implements HighDimensionDataT
     @Autowired
     SessionFactory sessionFactory
 
+    protected int fetchSize = 10000
+
     protected List<DataRetrievalParameterFactory> assayConstraintFactories
 
     protected List<DataRetrievalParameterFactory> dataConstraintFactories
@@ -171,6 +173,7 @@ abstract class AbstractHighDimensionDataTypeModule implements HighDimensionDataT
         /* builder.instance.is(builder.criteria) */
         builder.instance.readOnly = true
         builder.instance.cacheable = false
+        builder.instance.fetchSize = fetchSize
 
         builder
     }
