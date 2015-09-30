@@ -86,11 +86,18 @@ class HighDimensionDataTypeResourceImpl implements HighDimensionDataTypeResource
                     'No assays satisfy the provided criteria')
         }
 
+        // not needed yet, but it could be a good idea to pass assays here
         HibernateCriteriaBuilder criteriaBuilder =
             module.prepareDataQuery(projection, openSession())
 
-        criteriaBuilder.with {
-            'in' 'assay.id', assays*.id
+        if (criteriaBuilder.targetClass.metaClass.hasProperty('assay')) {
+            criteriaBuilder.with {
+                'in' 'assay.id', assays*.id
+            }
+        } else {
+            log.debug("${criteriaBuilder.targetClass} has no 'assay', " +
+                    "this is only correct if the data type is only capable " +
+                    "retrieving all the assays")
         }
 
         /* apply changes to criteria from projection, if any */
