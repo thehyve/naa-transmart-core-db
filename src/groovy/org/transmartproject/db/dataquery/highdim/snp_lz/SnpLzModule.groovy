@@ -238,7 +238,9 @@ class SnpLzModule extends AbstractHighDimensionDataTypeModule {
         }
 
         // have we found the positions for all the assays?
-        def assaysNotFound = (assays as Set) - foundAssays
+        // The groovy '-' default method uses a quadratic algorithm which is too slow here, so use the Java method
+        def assaysNotFound = assays as Set
+        assaysNotFound.removeAll(foundAssays)
         if (assaysNotFound) {
             throw new UnexpectedResultException(
                     "Could not find the blob position for " +
