@@ -25,7 +25,7 @@ import com.google.common.base.Objects;
  * Container holding the values of {GPS,GTS,DOSE}_BY_PROBE_BLOB of
  * a specific sample.
  */
-final class SnpLzCell {
+public final class SnpLzCell {
 
     public final double probabilityA1A1;
     public final double probabilityA1A2;
