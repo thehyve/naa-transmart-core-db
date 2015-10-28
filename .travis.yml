@@ -12,7 +12,7 @@ before_install:
     - test -z "$KEY_PASSWORD" || export CLOVER=1
 
 install:
-    - maybe_build_maven_dep $(travis_get_owner)/transmart-core-api core-api
+    - maybe_build_maven_dep $(travis_get_owner)/${PREFIX}transmart-core-api core-api
 
 script:
     - cd transmart-core-db-tests
