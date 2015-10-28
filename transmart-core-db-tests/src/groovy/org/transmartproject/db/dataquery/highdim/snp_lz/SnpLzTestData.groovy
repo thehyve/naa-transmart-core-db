@@ -36,6 +36,13 @@ import static org.transmartproject.db.dataquery.highdim.HighDimTestData.save
 class SnpLzTestData {
     public static final String TRIAL_NAME = 'CARDS'
 
+    List<DeSubjectSampleMapping> assays
+
+    SnpLzTestData(String conceptCode = 'concept code #1') {
+        assays = HighDimTestData.createTestAssays(
+                patients, -400, platform, TRIAL_NAME, conceptCode)
+    }
+
     DeGplInfo platform = {
         def res = new DeGplInfo(
                 title: 'Perlegen_600k',
@@ -47,9 +54,6 @@ class SnpLzTestData {
 
     List<PatientDimension> patients =
         HighDimTestData.createTestPatients(3, -300, TRIAL_NAME)
-
-    List<DeSubjectSampleMapping> assays =
-        HighDimTestData.createTestAssays(patients, -400, platform, TRIAL_NAME)
 
     List<GenotypeProbeAnnotation> annotations = {
         def createAnnotation = { id,
@@ -106,6 +110,7 @@ class SnpLzTestData {
         }
     }()
 
+    @Lazy
     List<SnpSubjectSortedDef> sortedSubjects = {
         def id = -500
         def pos = 1 /* positions are 1-based */
@@ -121,10 +126,12 @@ class SnpLzTestData {
         }
     }()
 
+    @Lazy
     def orderedSampleCodes = assays.sort { a ->
         sortedSubjects.find { it.subjectId == a.sampleCode }.patientPosition
     }*.sampleCode
 
+    @Lazy
     Table<String /* sample code*/, String /* rs id */, String /* triplet */> sampleGps = {
         def tb = ImmutableTable.builder()
 
@@ -143,6 +150,7 @@ class SnpLzTestData {
         tb.build()
     }()
 
+    @Lazy
     Table<String /* sample code*/, String /* rs id */, String /* alleles */> sampleGts = {
         def tb = ImmutableTable.builder()
 
@@ -161,6 +169,7 @@ class SnpLzTestData {
         tb.build()
     }()
 
+    @Lazy
     Table<String /* sample code*/, String /* rs id */, String /* dosage */> sampleDoses = {
         def tb = ImmutableTable.builder()
 
@@ -188,6 +197,7 @@ class SnpLzTestData {
         lobHelper.createBlob(os.toByteArray())
     }
 
+    @Lazy
     List<SnpDataByProbeCoreDb> data = {
         def session = Holders.applicationContext.sessionFactory.currentSession
         def lobHelper = session.lobHelper
