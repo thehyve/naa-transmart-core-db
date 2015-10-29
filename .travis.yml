@@ -1,8 +1,5 @@
-language: php # to have .travis installing the php version we indicate
 sudo: false
 
-php:
-    - 5.6
 cache:
     directories:
         - $HOME/.m2
@@ -17,7 +14,7 @@ before_install:
     - test -z "$KEY_PASSWORD" || export CLOVER=1
 
 install:
-    - maybe_build_maven_dep $(travis_get_owner)/${PREFIX}transmart-core-api core-api
+    - build_maven_dep $(travis_get_owner)/${PREFIX}transmart-core-api master core-api
 
 script:
     - cd transmart-core-db-tests
