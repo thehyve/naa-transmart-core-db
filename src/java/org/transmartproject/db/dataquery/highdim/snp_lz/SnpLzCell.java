@@ -70,6 +70,8 @@ public final class SnpLzCell {
         return likelyAllele2;
     }
 
+    public String getLikelyGenotype() { return likelyAllele1 + "_" + likelyAllele2; }
+
     public double getMinorAlleleDose() {
         return minorAlleleDose;
     }
