@@ -20,7 +20,6 @@
 package org.transmartproject.db.dataquery.highdim.snp_lz
 
 import org.transmartproject.core.dataquery.highdim.projections.AllDataProjection
-import org.transmartproject.db.dataquery.highdim.projections.AllDataProjectionImpl
 
 /**
  * Implements {@link AllDataProjection} for the snp_lz module.
@@ -36,10 +35,10 @@ class SnpLzAllDataProjection implements AllDataProjection {
             .collectEntries { [it.name, it.type] }
 
     final Map<String, Class> rowProperties =
-            ['snpName', 'a1', 'a2', 'imputeQuality', 'GTProbabilityThreshold',
+            ['snpName', 'chromosome', 'position', 'a1', 'a2', 'imputeQuality', 'GTProbabilityThreshold',
              'minorAlleleFrequency', 'minorAllele', 'a1a1Count', 'a1a2Count',
              'a2a2Count', 'noCallCount'].collectEntries {
-                def p = SnpLzCell.metaClass.getProperty(it)
+                def p = SnpLzRow.metaClass.getProperty(it)
                 [p.name, p.type]
             }
 

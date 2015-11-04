@@ -150,8 +150,8 @@ class SnpLzRow implements BioMarkerDataRow<SnpLzCell> {
         (String) probeData.chromosome
     }
 
-    Integer getPosition() {
-        (Integer) probeData.position
+    Long getPosition() {
+        (Long) probeData.position
     }
 
     String getSnpName() {
