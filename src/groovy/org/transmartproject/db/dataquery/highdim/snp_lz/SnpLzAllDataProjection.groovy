@@ -32,7 +32,8 @@ class SnpLzAllDataProjection implements AllDataProjection {
     final Map<String, Class> dataProperties = SnpLzCell
             .metaClass
             .properties
-            .findAll { it.name != 'class' }
+            // The likelyAlleles are already covered in the likelyGenotype property, no need to include them twice
+            .findAll { !(it.name in ['class', 'likelyAllele1', 'likelyAllele2']) }
             .collectEntries { [it.name, it.type] }
 
     final Map<String, Class> rowProperties =

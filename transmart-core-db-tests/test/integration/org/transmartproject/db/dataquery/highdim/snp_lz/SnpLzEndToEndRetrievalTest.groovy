@@ -166,6 +166,7 @@ class SnpLzEndToEndRetrievalTest {
 
                                                 hasProperty('likelyAllele1', is(gts[0] as char)),
                                                 hasProperty('likelyAllele2', is(gts[1] as char)),
+                                                hasProperty('likelyGenotype', is("${gts[0]}_${gts[1]}")),
 
                                                 hasProperty('minorAlleleDose', closeTo(doses as Double, DELTA)),
                                         )
