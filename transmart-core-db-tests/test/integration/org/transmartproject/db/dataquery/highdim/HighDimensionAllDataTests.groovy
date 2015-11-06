@@ -117,7 +117,7 @@ class HighDimensionAllDataTests {
         [
             'snp_lz',
             [probabilityA1A1:double, probabilityA1A2:double, probabilityA2A2:double,
-             likelyAllele1:char, likelyAllele2:char, minorAlleleDose:double],
+             likelyGenotype:String, minorAlleleDose:double],
             [snpName:String, chromosome:String, position:Long, a1:String, a2:String,
              imputeQuality:BigDecimal, GTProbabilityThreshold:BigDecimal,
              minorAlleleFrequency:BigDecimal, minorAllele:String,
