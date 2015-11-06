@@ -218,6 +218,16 @@ class SnpLzTestData {
                         it.chromosome == annotation.chromosome }
             assert snpInfo != null
 
+            // Choose value of minorAllele based on the allele count, to vary its
+            // value: to generate test cases for both 'A1' and 'A2'.
+            long a1Count = 0
+            long a2Count = 0
+            gtss.each {
+                a1Count += it.count( a1 )
+                a2Count += it.count( a2 )
+            }
+            def minorAllele = (a1Count <= a2Count) ? 'A1' : 'A2'
+
             def r = new SnpDataByProbeCoreDb(
                     trialName: TRIAL_NAME,
                     a1: a1,
@@ -225,7 +235,7 @@ class SnpLzTestData {
                     gtProbabilityThreshold: 1.0,
                     imputeQuality: 0.1 * id,
                     maf: 0.218605627887442,
-                    minorAllele: 'A1',
+                    minorAllele: minorAllele,
                     CA1A1: gtss.count { "$a1 $a1" },
                     CA1A2: gtss.count { "$a1 $a2" } + gtss.count { "$a2 $a1" },
                     CA2A2: gtss.count { "$a2 $a2" },

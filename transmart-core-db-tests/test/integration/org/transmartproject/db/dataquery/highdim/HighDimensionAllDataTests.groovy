@@ -19,6 +19,7 @@
 
 package org.transmartproject.db.dataquery.highdim
 
+import com.google.common.primitives.Primitives
 import grails.test.mixin.TestMixin
 import org.junit.Before
 import org.junit.Test
@@ -38,6 +39,7 @@ import org.transmartproject.db.dataquery.highdim.protein.ProteinTestData
 import org.transmartproject.db.dataquery.highdim.rbm.RbmTestData
 import org.transmartproject.db.dataquery.highdim.rnaseq.RnaSeqTestData
 import org.transmartproject.db.dataquery.highdim.rnaseqcog.RnaSeqCogTestData
+import org.transmartproject.db.dataquery.highdim.snp_lz.SnpLzTestData
 import org.transmartproject.db.dataquery.highdim.vcf.VcfTestData
 import org.transmartproject.db.test.RuleBasedIntegrationTestMixin
 
@@ -111,6 +113,16 @@ class HighDimensionAllDataTests {
             [readcount:Integer, normalizedReadcount:Double, logNormalizedReadcount:Double, zscore:Double],
             [id: Long, name:String, cytoband:String, chromosome:String, start:Long, end:Long, numberOfProbes:Integer, bioMarker: String],
             RnaSeqTestData
+        ],
+        [
+            'snp_lz',
+            [probabilityA1A1:double, probabilityA1A2:double, probabilityA2A2:double,
+             likelyAllele1:char, likelyAllele2:char, minorAlleleDose:double],
+            [snpName:String, chromosome:String, position:Long, a1:String, a2:String,
+             imputeQuality:BigDecimal, GTProbabilityThreshold:BigDecimal,
+             minorAlleleFrequency:BigDecimal, minorAllele:String,
+             a1a1Count:Long, a1a2Count:Long, a2a2Count:Long, noCallCount:Long],
+            SnpLzTestData
         ]
     ].collect {it.toArray()}}
 
@@ -169,8 +181,9 @@ class HighDimensionAllDataTests {
                     println('**************************************************************************************')
                 }
                 println("key: $col, value: ${data."$col"}, type: ${data."$col".getClass()}")
+                /* we read the data from the map's EntrySet, so the primitives will be wrapped */
                 assertThat  "${owner.type.dataTypeName}: $col is not of expected type.",
-                        data."$col".getClass(), typeCompatibleWith(type)
+                        data."$col".getClass(), typeCompatibleWith(Primitives.wrap(type))
             }
         } finally {
             result?.close()
