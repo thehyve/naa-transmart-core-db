@@ -1,18 +1,20 @@
-language: groovy
+sudo: false
+
+cache:
+    directories:
+        - $HOME/.m2
 
 jdk:
     - oraclejdk7
 
 before_install:
-    - mkdir -p ~/.m2
-    - bash -c '{ curl http://files.thehyve.net/caches/grails_2.3.3_mvncache.tar.gz  | tar -C ~/.m2 -xzf -; } || true'
     - git clone --depth 1 git://github.com/thehyve/transmart-travis.git ~/ts-travis
     - source ~/ts-travis/init.sh
     - source ~/ts-travis/maven_dep.sh
     - test -z "$KEY_PASSWORD" || export CLOVER=1
 
 install:
-    - maybe_build_maven_dep $(travis_get_owner)/transmart-core-api core-api
+    - build_maven_dep $(travis_get_owner)/${PREFIX}transmart-core-api master core-api
 
 script:
     - cd transmart-core-db-tests

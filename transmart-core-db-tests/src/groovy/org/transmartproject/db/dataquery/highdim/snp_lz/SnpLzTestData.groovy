@@ -36,6 +36,13 @@ import static org.transmartproject.db.dataquery.highdim.HighDimTestData.save
 class SnpLzTestData {
     public static final String TRIAL_NAME = 'CARDS'
 
+    List<DeSubjectSampleMapping> assays
+
+    SnpLzTestData(String conceptCode = 'concept code #1') {
+        assays = HighDimTestData.createTestAssays(
+                patients, -400, platform, TRIAL_NAME, conceptCode)
+    }
+
     DeGplInfo platform = {
         def res = new DeGplInfo(
                 title: 'Perlegen_600k',
@@ -47,9 +54,6 @@ class SnpLzTestData {
 
     List<PatientDimension> patients =
         HighDimTestData.createTestPatients(3, -300, TRIAL_NAME)
-
-    List<DeSubjectSampleMapping> assays =
-        HighDimTestData.createTestAssays(patients, -400, platform, TRIAL_NAME)
 
     List<GenotypeProbeAnnotation> annotations = {
         def createAnnotation = { id,
@@ -106,6 +110,7 @@ class SnpLzTestData {
         }
     }()
 
+    @Lazy
     List<SnpSubjectSortedDef> sortedSubjects = {
         def id = -500
         def pos = 1 /* positions are 1-based */
@@ -121,10 +126,12 @@ class SnpLzTestData {
         }
     }()
 
+    @Lazy
     def orderedSampleCodes = assays.sort { a ->
         sortedSubjects.find { it.subjectId == a.sampleCode }.patientPosition
     }*.sampleCode
 
+    @Lazy
     Table<String /* sample code*/, String /* rs id */, String /* triplet */> sampleGps = {
         def tb = ImmutableTable.builder()
 
@@ -143,6 +150,7 @@ class SnpLzTestData {
         tb.build()
     }()
 
+    @Lazy
     Table<String /* sample code*/, String /* rs id */, String /* alleles */> sampleGts = {
         def tb = ImmutableTable.builder()
 
@@ -161,6 +169,7 @@ class SnpLzTestData {
         tb.build()
     }()
 
+    @Lazy
     Table<String /* sample code*/, String /* rs id */, String /* dosage */> sampleDoses = {
         def tb = ImmutableTable.builder()
 
@@ -188,6 +197,7 @@ class SnpLzTestData {
         lobHelper.createBlob(os.toByteArray())
     }
 
+    @Lazy
     List<SnpDataByProbeCoreDb> data = {
         def session = Holders.applicationContext.sessionFactory.currentSession
         def lobHelper = session.lobHelper
@@ -208,6 +218,16 @@ class SnpLzTestData {
                         it.chromosome == annotation.chromosome }
             assert snpInfo != null
 
+            // Choose value of minorAllele based on the allele count, to vary its
+            // value: to generate test cases for both 'A1' and 'A2'.
+            long a1Count = 0
+            long a2Count = 0
+            gtss.each {
+                a1Count += it.count( a1 )
+                a2Count += it.count( a2 )
+            }
+            def minorAllele = (a1Count <= a2Count) ? 'A1' : 'A2'
+
             def r = new SnpDataByProbeCoreDb(
                     trialName: TRIAL_NAME,
                     a1: a1,
@@ -215,7 +235,7 @@ class SnpLzTestData {
                     gtProbabilityThreshold: 1.0,
                     imputeQuality: 0.1 * id,
                     maf: 0.218605627887442,
-                    minorAllele: 'A1',
+                    minorAllele: minorAllele,
                     CA1A1: gtss.count { "$a1 $a1" },
                     CA1A2: gtss.count { "$a1 $a2" } + gtss.count { "$a2 $a1" },
                     CA2A2: gtss.count { "$a2 $a2" },

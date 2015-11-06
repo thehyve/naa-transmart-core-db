@@ -90,7 +90,9 @@ class HighDimensionDataTypeResourceImpl implements HighDimensionDataTypeResource
         HibernateCriteriaBuilder criteriaBuilder =
             module.prepareDataQuery(projection, openSession())
 
-        if (criteriaBuilder.targetClass.metaClass.hasProperty('assay')) {
+        // hasProperty oddly returns null sometimes
+        if (criteriaBuilder.targetClass.metaClass
+                .properties.find { it.name == 'assay' }) {
             criteriaBuilder.with {
                 'in' 'assay.id', assays*.id
             }
