@@ -50,6 +50,6 @@ class SnpLzDoseProjection implements CriteriaProjection<Double> {
     @Override
     Double doWithResult(Object o) {
         assert o instanceof SnpLzAllDataCell
-        Double.valueOf(((SnpLzAllDataCell) o).minorAlleleDose)
+        ((SnpLzAllDataCell) o).minorAlleleDose
     }
 }
