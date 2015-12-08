@@ -20,10 +20,8 @@
 package org.transmartproject.db.dataquery.highdim.snp_lz
 
 import grails.orm.HibernateCriteriaBuilder
+import groovy.transform.Canonical
 import groovy.transform.CompileStatic
-import groovy.transform.EqualsAndHashCode
-import groovy.transform.ToString
-import groovy.transform.TupleConstructor
 import groovy.transform.TypeCheckingMode
 import org.hibernate.criterion.ProjectionList
 import org.hibernate.criterion.Projections
@@ -66,7 +64,5 @@ class SnpLzProbabilitiesProjection implements MultiValueProjection, CriteriaProj
 }
 
 @CompileStatic
-@EqualsAndHashCode
-@ToString
-@TupleConstructor
+@Canonical
 class SnpLzProbabilitiesCell {double probabilityA1A1, probabilityA1A2, probabilityA2A2}
