@@ -38,8 +38,8 @@ class SnpLzAllDataProjection implements
             ['gpsByProbeBlob', 'gtsByProbeBlob', 'doseByProbeBlob']
 
     @Override
-    Map<String, Class> getDataProperties() { _dataProperties }
-    private static final Map<String, Class> _dataProperties = ImmutableMap.copyOf(
+    ImmutableMap<String, Class> getDataProperties() { _dataProperties }
+    private static final ImmutableMap<String, Class> _dataProperties = ImmutableMap.copyOf(
             // Ensure a logical order
             ['probabilityA1A1', 'probabilityA1A2', 'probabilityA2A2', 'likelyGenotype', 'minorAlleleDose']
                     .collectEntries {
@@ -48,8 +48,8 @@ class SnpLzAllDataProjection implements
             })
 
     @Override
-    Map<String, Class> getRowProperties() { _rowProperties }
-    private static final Map<String, Class> _rowProperties = ImmutableMap.copyOf(
+    ImmutableMap<String, Class> getRowProperties() { _rowProperties }
+    private static final ImmutableMap<String, Class> _rowProperties = ImmutableMap.copyOf(
         ['snpName', 'chromosome', 'position', 'a1', 'a2', 'imputeQuality', 'GTProbabilityThreshold',
          'minorAlleleFrequency', 'minorAllele', 'a1a1Count', 'a1a2Count', 'a2a2Count', 'noCallCount'].collectEntries {
             def p = SnpLzRow.metaClass.properties.find { n -> n.name == it }
