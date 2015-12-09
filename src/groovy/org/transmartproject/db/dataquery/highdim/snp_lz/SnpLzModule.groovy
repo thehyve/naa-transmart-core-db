@@ -282,28 +282,22 @@ class SnpLzModule extends AbstractHighDimensionDataTypeModule {
         log.debug "Found ${sssList.size()} subject ordering entries for assays."
 
         LinkedHashMap<AssayColumn, Integer> assayIndexMap = [:] as LinkedHashMap
-        Set<AssayColumn> foundAssays = [] as Set
+        Set<AssayColumn> assaysNotFound = [] as Set
 
-        def assayForPatientId = assays.collectEntries { [it.patient.id, it] }
-        // map assays to their positions in the blobs
-        sssList.each { SnpSubjectSortedDef sss ->
-            AssayColumn assay = assayForPatientId[sss.patient.id]
-            if (!assay) {
-                log.trace "SnpSubjectSortedDef entry $sss not matched to any selected assay"
-                return
+        /*
+         * Map assays to their positions in the blobs.
+         * The ordering of <var>assays</var> is preserved in the iterator of assayIndexMap.
+         */
+        def sssForPatientId = sssList.collectEntries { [it.patient.id, it] }
+        assays.each { AssayColumn assay ->
+            SnpSubjectSortedDef sss = sssForPatientId[assay.patient.id]
+            if (!sss) {
+                assaysNotFound << sss
             }
-
-            foundAssays << assay
-
             assert assayIndexMap[assay] == null : "Not there yet"
             assert sss.patientPosition > 0 : 'patient positions are 1-based in the DB'
             assayIndexMap[assay] = sss.patientPosition - 1 // make it 0-based
         }
-
-        // have we found the positions for all the assays?
-        // The groovy '-' default method uses a quadratic algorithm which is too slow here, so use the Java method
-        def assaysNotFound = assays as Set
-        assaysNotFound.removeAll(foundAssays)
         if (assaysNotFound) {
             throw new UnexpectedResultException(
                     "Could not find the blob position for " +

@@ -137,9 +137,7 @@ class SnpLzEndToEndRetrievalTest {
 
     // for all data projection only
     private Matcher dataMatcherFor(annotations, assays) {
-        def orderedSampleCodes = assays.sort { a ->
-            testData.sortedSubjects.find { it.subjectId == a.sampleCode }.patientPosition
-        }*.sampleCode
+        def orderedSampleCodes = assays*.sampleCode
 
         def orderedSnpData = testData.data
                 .grep { it.genotypeProbeAnnotation.id in annotations*.id }
@@ -155,10 +153,10 @@ class SnpLzEndToEndRetrievalTest {
                                     orderedSampleCodes.collect { sampleCode ->
                                         def gps = testData.sampleGps
                                                 .get(sampleCode, snpData.genotypeProbeAnnotation.snpName)
-                                                .split(/\s+/)
+                                                .split(' ')
                                         def gts = testData.sampleGts
                                                 .get(sampleCode, snpData.genotypeProbeAnnotation.snpName)
-                                                .split(/\s+/)
+                                                .split(' ')
                                         def doses = testData.sampleDoses
                                                 .get(sampleCode, snpData.genotypeProbeAnnotation.snpName)
 
@@ -184,7 +182,10 @@ class SnpLzEndToEndRetrievalTest {
 
         List rows = Lists.newArrayList result.rows
 
-        assertThat rows, dataMatcherFor(testData.annotations, testData.assays)
+        // test correspondence between testData.assays and result.indicesList
+        assert (result.indicesList*.sampleCode).toSet().equals((testData.assays*.sampleCode).toSet())
+        // test correspondence between testData and result rows
+        assertThat rows, dataMatcherFor(testData.annotations, result.indicesList)
     }
 
     @Test
@@ -194,7 +195,10 @@ class SnpLzEndToEndRetrievalTest {
 
         List rows = Lists.newArrayList result.rows
 
-        assertThat rows, dataMatcherFor(testData.annotations, testData.assays)
+        // test correspondence between testData.assays and result.indicesList
+        assert (result.indicesList*.sampleCode).toSet().equals((testData.assays*.sampleCode).toSet())
+        // test correspondence between testData and result rows
+        assertThat rows, dataMatcherFor(testData.annotations, result.indicesList)
         SnpLzRow firstLzRow = rows.first()
 
         assert firstLzRow[1] == Lists.newArrayList(firstLzRow.iterator())[1]
@@ -207,7 +211,10 @@ class SnpLzEndToEndRetrievalTest {
 
         List rows = Lists.newArrayList result.rows
 
-        assertThat rows, dataMatcherFor(testData.annotations, testData.assays)
+        // test correspondence between testData.assays and result.indicesList
+        assert (result.indicesList*.sampleCode).toSet().equals((testData.assays*.sampleCode).toSet())
+        // test correspondence between testData and result rows
+        assertThat rows, dataMatcherFor(testData.annotations, result.indicesList)
         SnpLzRow firstLzRow = rows.first()
 
         assert firstLzRow[result.indicesList[1]] ==
@@ -243,7 +250,10 @@ class SnpLzEndToEndRetrievalTest {
 
         List rows = Lists.newArrayList result.rows
 
-        assertThat rows, dataMatcherFor([selectedAnnotation], testData.assays)
+        // test correspondence between testData.assays and result.indicesList
+        assert (result.indicesList*.sampleCode).toSet().equals((testData.assays*.sampleCode).toSet())
+        // test correspondence between testData and result rows
+        assertThat rows, dataMatcherFor([selectedAnnotation], result.indicesList)
     }
 
     @Test
@@ -259,7 +269,10 @@ class SnpLzEndToEndRetrievalTest {
 
         List rows = Lists.newArrayList result.rows
 
-        assertThat rows, dataMatcherFor([selectedAnnotation], testData.assays)
+        // test correspondence between testData.assays and result.indicesList
+        assert (result.indicesList*.sampleCode).toSet().equals((testData.assays*.sampleCode).toSet())
+        // test correspondence between testData and result rows
+        assertThat rows, dataMatcherFor([selectedAnnotation], result.indicesList)
     }
 
     @Test
@@ -273,7 +286,10 @@ class SnpLzEndToEndRetrievalTest {
         List rows = Lists.newArrayList result.rows
 
         assertThat rows, hasSize(2)
-        assertThat rows, dataMatcherFor(testData.annotations[0..1], testData.assays)
+        // test correspondence between testData.assays and result.indicesList
+        assert (result.indicesList*.sampleCode).toSet().equals((testData.assays*.sampleCode).toSet())
+        // test correspondence between testData and result rows
+        assertThat rows, dataMatcherFor(testData.annotations[0..1], result.indicesList)
     }
 
     @Test
