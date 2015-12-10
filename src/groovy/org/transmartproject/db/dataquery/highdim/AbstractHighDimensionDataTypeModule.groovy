@@ -19,6 +19,7 @@
 
 package org.transmartproject.db.dataquery.highdim
 
+import com.google.common.collect.ImmutableMap
 import grails.orm.HibernateCriteriaBuilder
 
 import javax.annotation.PostConstruct
@@ -51,11 +52,11 @@ abstract class AbstractHighDimensionDataTypeModule implements HighDimensionDataT
     @Autowired
     HighDimensionResourceService highDimensionResourceService
 
-    static Map<String, Class> typesMap(Class domainClass, List<String> fields,
+    static ImmutableMap<String, Class> typesMap(Class domainClass, List<String> fields,
                                        Map<String, String> translationMap = [:]) {
-        fields.collectEntries({
+        ImmutableMap.<String, Class>copyOf(fields.collectEntries({
             [(it): domainClass.metaClass.getMetaProperty(translationMap.get(it, it)).type]
-        }).asImmutable()
+        }))
     }
 
     @PostConstruct
