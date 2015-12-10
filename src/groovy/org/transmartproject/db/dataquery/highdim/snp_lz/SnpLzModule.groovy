@@ -293,7 +293,7 @@ class SnpLzModule extends AbstractHighDimensionDataTypeModule {
         assays.each { AssayColumn assay ->
             SnpSubjectSortedDef sss = sssForPatientId[assay.patient.id]
             if (!sss) {
-                assaysNotFound << sss
+                assaysNotFound << assay
             }
             assert assayIndexMap[assay] == null : "Not there yet"
             assert sss.patientPosition > 0 : 'patient positions are 1-based in the DB'
