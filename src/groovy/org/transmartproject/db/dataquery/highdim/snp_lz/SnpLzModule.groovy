@@ -287,7 +287,7 @@ class SnpLzModule extends AbstractHighDimensionDataTypeModule {
 
         /*
          * Map assays to their positions in the blobs.
-         * The ordering of <var>assays</var> is preserved in the iterator of assayIndexMap.
+         * The ordering of the <var>assays</var> list is preserved in the iterator of assayIndexMap.
          */
         def sssForPatientId = sssList.collectEntries { [it.patient.id, it] }
         assays.each { AssayColumn assay ->
