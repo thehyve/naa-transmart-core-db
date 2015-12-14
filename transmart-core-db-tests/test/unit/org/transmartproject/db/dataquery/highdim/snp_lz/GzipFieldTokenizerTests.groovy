@@ -200,7 +200,7 @@ class GzipFieldTokenizerTests {
     @Test
     void testAsStringListSmallerThanExpected() {
         expectedException.expect(InputMismatchException)
-        expectedException.expectMessage('but got only')
+        expectedException.expectMessage('tokens, but got')
 
         def blob = blobFor(DATA_CHAR)
 
@@ -213,6 +213,7 @@ class GzipFieldTokenizerTests {
     @Test
     void testAsStringListLargerThanExpected() {
         expectedException.expect(InputMismatchException)
+        expectedException.expectMessage('tokens, but got')
 
         def blob = blobFor(DATA_CHAR)
 

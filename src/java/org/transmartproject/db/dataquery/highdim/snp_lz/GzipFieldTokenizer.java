@@ -179,7 +179,7 @@ public class GzipFieldTokenizer {
             }
         });
         if (result.size() != expectedSize) {
-            throw new InputMismatchException("Expected " + expectedSize + " tokens, but got only " + result.size());
+            throw new InputMismatchException("Expected " + expectedSize + " tokens, but got " + result.size());
         }
         return result;
     }
