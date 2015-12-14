@@ -132,6 +132,9 @@ class SnpLzTestData {
     }*.sampleCode
 
     @Lazy
+    def orderedAssays = assays.sort { it.id }
+
+    @Lazy
     Table<String /* sample code*/, String /* rs id */, String /* triplet */> sampleGps = {
         def tb = ImmutableTable.builder()
 

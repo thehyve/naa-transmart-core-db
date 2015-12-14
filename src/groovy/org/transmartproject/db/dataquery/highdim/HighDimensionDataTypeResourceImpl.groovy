@@ -88,7 +88,7 @@ class HighDimensionDataTypeResourceImpl implements HighDimensionDataTypeResource
 
         // not needed yet, but it could be a good idea to pass assays here
         HibernateCriteriaBuilder criteriaBuilder =
-            module.prepareDataQuery(projection, openSession())
+            module.prepareDataQuery(assays, projection, openSession())
 
         // hasProperty oddly returns null sometimes
         if (criteriaBuilder.targetClass.metaClass
