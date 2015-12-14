@@ -19,6 +19,7 @@
 
 package org.transmartproject.db.dataquery.highdim
 
+import com.google.common.collect.ImmutableMap
 import grails.test.mixin.TestMixin
 import grails.test.mixin.support.GrailsUnitTestMixin
 import org.junit.Test
@@ -38,8 +39,8 @@ class MultiValueProjectionTests {
 
     @Test
     void testAllDataProjectionProperties() {
-        Map<String, Class> dataProps = [foo:String, bar:Double]
-        Map<String, Class> rowProps = [rowA:Double, rowB:String]
+        ImmutableMap<String, Class> dataProps = ImmutableMap.copyOf([foo:String, bar:Double])
+        ImmutableMap<String, Class> rowProps = ImmutableMap.copyOf([rowA:Double, rowB:String])
 
         AllDataProjectionFactory factory = new AllDataProjectionFactory(dataProps, rowProps)
         AllDataProjection projection = factory.createFromParameters(Projection.ALL_DATA_PROJECTION, [:], null)
