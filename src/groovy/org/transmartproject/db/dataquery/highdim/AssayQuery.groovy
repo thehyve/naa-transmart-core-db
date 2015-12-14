@@ -30,6 +30,8 @@ import org.transmartproject.db.dataquery.highdim.assayconstraints.AbstractAssayC
  */
 class AssayQuery {
 
+    private static final int FETCH_SIZE = 5000
+
     List<AbstractAssayConstraint> constraints
 
     AssayQuery(List<AbstractAssayConstraint> constraints) {
@@ -65,6 +67,7 @@ class AssayQuery {
          * that closure, but for now let's break some abstractions.
          */
         try {
+            criteria.instance.fetchSize = FETCH_SIZE
             criteria.instance.list().collect {
                 new AssayColumnImpl(it)
             }

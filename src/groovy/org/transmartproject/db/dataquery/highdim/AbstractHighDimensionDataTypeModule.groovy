@@ -19,6 +19,7 @@
 
 package org.transmartproject.db.dataquery.highdim
 
+import com.google.common.collect.ImmutableMap
 import grails.orm.HibernateCriteriaBuilder
 
 import javax.annotation.PostConstruct
@@ -27,6 +28,7 @@ import org.hibernate.SessionFactory
 import org.hibernate.engine.SessionImplementor
 import org.hibernate.impl.CriteriaImpl
 import org.springframework.beans.factory.annotation.Autowired
+import org.transmartproject.core.dataquery.highdim.AssayColumn
 import org.transmartproject.core.dataquery.highdim.HighDimensionDataTypeResource
 import org.transmartproject.core.dataquery.highdim.assayconstraints.AssayConstraint
 import org.transmartproject.core.dataquery.highdim.dataconstraints.DataConstraint
@@ -39,6 +41,8 @@ abstract class AbstractHighDimensionDataTypeModule implements HighDimensionDataT
     @Autowired
     SessionFactory sessionFactory
 
+    protected int fetchSize = 10000
+
     protected List<DataRetrievalParameterFactory> assayConstraintFactories
 
     protected List<DataRetrievalParameterFactory> dataConstraintFactories
@@ -48,11 +52,11 @@ abstract class AbstractHighDimensionDataTypeModule implements HighDimensionDataT
     @Autowired
     HighDimensionResourceService highDimensionResourceService
 
-    static Map<String, Class> typesMap(Class domainClass, List<String> fields,
+    static ImmutableMap<String, Class> typesMap(Class domainClass, List<String> fields,
                                        Map<String, String> translationMap = [:]) {
-        fields.collectEntries({
+        ImmutableMap.<String, Class>copyOf(fields.collectEntries({
             [(it): domainClass.metaClass.getMetaProperty(translationMap.get(it, it)).type]
-        }).asImmutable()
+        }))
     }
 
     @PostConstruct
@@ -151,6 +155,17 @@ abstract class AbstractHighDimensionDataTypeModule implements HighDimensionDataT
                 "does not support the projection $name")
     }
 
+    HibernateCriteriaBuilder prepareDataQuery(
+            List<AssayColumn> assays,
+            Projection projection,
+            SessionImplementor session) {
+        return prepareDataQuery(projection, session)
+    }
+
+    abstract HibernateCriteriaBuilder prepareDataQuery(
+            Projection projection,
+            SessionImplementor session)
+
     final protected HibernateCriteriaBuilder createCriteriaBuilder(
             Class targetClass, String alias, SessionImplementor session) {
 
@@ -171,6 +186,7 @@ abstract class AbstractHighDimensionDataTypeModule implements HighDimensionDataT
         /* builder.instance.is(builder.criteria) */
         builder.instance.readOnly = true
         builder.instance.cacheable = false
+        builder.instance.fetchSize = fetchSize
 
         builder
     }
