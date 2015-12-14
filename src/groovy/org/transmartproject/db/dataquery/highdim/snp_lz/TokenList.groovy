@@ -1,5 +1,7 @@
 package org.transmartproject.db.dataquery.highdim.snp_lz
 
+import groovy.transform.CompileStatic
+
 import java.io.IOException
 import java.io.Reader
 import java.util.InputMismatchException
@@ -17,9 +19,8 @@ import java.util.InputMismatchException
  *
  * It comes with a {@link #parse(Reader)} function that parses a space-delimited
  * stream of values.
- *
- * @author gijs@thehyve.nl
  */
+@CompileStatic
 class TokenList extends AbstractList<String> {
 
     private StringBuilder builder = new StringBuilder()

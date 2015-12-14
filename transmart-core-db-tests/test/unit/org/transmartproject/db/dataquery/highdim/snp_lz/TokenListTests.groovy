@@ -1,5 +1,6 @@
 package org.transmartproject.db.dataquery.highdim.snp_lz;
 
+import org.junit.Test;
 import static groovy.test.GroovyAssert.*
 
 class TokenListTests {
