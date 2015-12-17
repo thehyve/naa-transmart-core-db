@@ -112,8 +112,7 @@ class HighDimensionDataTypeResourceImpl implements HighDimensionDataTypeResource
         assayConstraints << new MarkerTypeConstraint(
                 platformNames: module.platformMarkerTypes)
 
-        def assayQuery = new AssayQuery(assayConstraints)
-        List<AssayColumn> assays = assayQuery.retrieveAssays()
+        List<AssayColumn> assays = new AssayQuery(assayConstraints).retrieveAssays()
         if (assays.empty) {
             throw new EmptySetException(
                     'No assay satisfies the provided criteria.')
