@@ -71,22 +71,8 @@ class HighDimensionDataTypeResourceImpl implements HighDimensionDataTypeResource
                                  List<DataConstraint> dataConstraints,
                                  Projection projection) {
 
-        // Each module should only return assays that match 
-        // the markertypes specified, in addition to the 
-        // constraints given
-        assayConstraints << new MarkerTypeConstraint(
-                platformNames: module.platformMarkerTypes)
-                                                                  
-        def assayQuery = new AssayQuery(assayConstraints)
-        List<AssayColumn> assays
+        List<AssayColumn> assays = retrieveAssays(assayConstraints)
 
-        assays = assayQuery.retrieveAssays()
-        if (assays.empty) {
-            throw new EmptySetException(
-                    'No assays satisfy the provided criteria')
-        }
-
-        // not needed yet, but it could be a good idea to pass assays here
         HibernateCriteriaBuilder criteriaBuilder =
             module.prepareDataQuery(assays, projection, openSession())
 
@@ -116,6 +102,22 @@ class HighDimensionDataTypeResourceImpl implements HighDimensionDataTypeResource
                 criteriaBuilder.instance.scroll(ScrollMode.FORWARD_ONLY),
                 assays,
                 projection)
+    }
+
+    @Override
+    List<AssayColumn> retrieveAssays(List<AssayConstraint> assayConstraints) {
+        // Each module should only return assays that match
+        // the marker types specified, in addition to the
+        // constraints given
+        assayConstraints << new MarkerTypeConstraint(
+                platformNames: module.platformMarkerTypes)
+
+        List<AssayColumn> assays = new AssayQuery(assayConstraints).retrieveAssays()
+        if (assays.empty) {
+            throw new EmptySetException(
+                    'No assay satisfies the provided criteria.')
+        }
+        assays
     }
 
     @Override
