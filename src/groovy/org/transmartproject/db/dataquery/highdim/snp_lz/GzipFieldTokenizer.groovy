@@ -20,7 +20,7 @@
 package org.transmartproject.db.dataquery.highdim.snp_lz;
 
 import com.google.common.base.Charsets;
-import com.google.common.base.Function;
+import com.google.common.base.Function
 import groovy.transform.CompileStatic;
 
 import java.sql.Blob;
@@ -31,84 +31,77 @@ import java.util.zip.GZIPInputStream;
  */
 @CompileStatic
 class GzipFieldTokenizer {
-    String version = 'Groovy version, space in outer'
 
     private Blob blob
     private int expectedSize
+
+    // Groovy can do int operations unboxed, but not char operations
+    static final int space = (' ' as char) as int
 
     public GzipFieldTokenizer(Blob blob, int expectedSize) {
         this.blob = blob
         this.expectedSize = expectedSize
     }
 
-    private <T> T withReader(Function<Reader, T> action) {
+    private void withTokens(Function<String, Object> action) {
         BufferedReader reader = new BufferedReader(
                 new InputStreamReader(new GZIPInputStream(blob.getBinaryStream()), Charsets.US_ASCII));
 
         try {
-            return action.apply(reader)
+            StringBuilder builder = new StringBuilder();
+            int c, size = 0
+            while ((c = reader.read()) >= 0) {
+                if (c == space) {
+                    size++
+                    if (size > expectedSize - 1) {
+                        throw new InputMismatchException("Got more tokens than the $expectedSize expected")
+                    }
+                    action.apply(builder.toString())
+                    builder.setLength(0)
+                } else {
+                    builder.append((char) c)
+                }
+            }
+
+            if (size > 0 || builder.size()) size += 1
+            // check this first to make sure we don't call action once too much
+            if (size != expectedSize) {
+                throw new InputMismatchException("Expected $expectedSize tokens, but got only $size")
+            }
+            if (size) {
+                action.apply(builder.toString())
+            }
         } finally {
             reader.close()
         }
     }
 
-    private <T> T withScanner(final Function<Scanner, T> action) {
-        return withReader({ Reader r -> action.apply(new Scanner(r)) } as Function<Reader, T>)
-    }
-
     public double[] asDoubleArray() {
-        return withScanner({ Scanner scan ->
-            double[] res = new double[expectedSize]
+        double[] res = new double[expectedSize]
+        withTokens(new Function<String,Object>() {
+            // Having these as inner object fields avoids an indirection through Reference in the inner loop
+            double[] arr = res
             int i = 0
-            while (scan.hasNext()) {
-                if (i > expectedSize - 1) {
-                    throw new InputMismatchException("Got more tokens than the $expectedSize expected")
-                }
-                // do not use parseDouble, otherwise the scanner will just
-                // refuse to consume input that doesn't look like a float
-                String nextToken = scan.next()
-                res[i++] = Double.parseDouble(nextToken)
+            Object apply(String tok) {
+                arr[i++] = Double.parseDouble(tok)
             }
-            if (i < expectedSize) {
-                throw new InputMismatchException("Expected $expectedSize tokens, but got only ${i-1}")
-            }
-
-            return res;
-        } as Function<Scanner, double[]>)
+        })
+        return res
     }
 
-    final char space = ' ' as char
     /**
      * @throws InputMismatchException iff the number of values read &ne; <var>expectedSize</var>.
      * @return a list of strings.
      */
     public List<String> asStringList() {
-        return withReader({ Reader r ->
-            ArrayList<String> res = new ArrayList<String>(expectedSize)
-            StringBuilder builder = new StringBuilder();
-            char c
-            // The assignment expression takes the value of the right hand side
-            while ((c = r.read()) >= 0) {
-                if (c == space) {
-                    res.add(builder.toString())
-                    builder.setLength(0)
-                    if (res.size() > expectedSize - 1) {
-                        throw new InputMismatchException("Got more tokens than the $expectedSize expected")
-                    }
-                } else {
-                    builder.append(c)
-                }
+        ArrayList<String> res = new ArrayList(expectedSize)
+        withTokens(new Function<String,Object>() {
+            ArrayList<String> l = res
+            Object apply(String tok) {
+                l.add(tok)
             }
-
-            if (res.size() > 0 || builder.size() > 0) {
-                res.add(builder.toString())
-            }
-            if (res.size() != expectedSize) {
-                throw new InputMismatchException("Expected $expectedSize tokens, but got only ${res.size()}")
-            }
-
-            return res
-        } as Function<Reader, List<String>>)
+        })
+        return res
     }
 
 }
