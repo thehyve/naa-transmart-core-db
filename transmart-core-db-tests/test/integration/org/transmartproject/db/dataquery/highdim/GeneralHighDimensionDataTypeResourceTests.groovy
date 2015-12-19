@@ -65,6 +65,12 @@ class GeneralHighDimensionDataTypeResourceTests {
                 testData.assays.sort { it.id }.collect {
                     hasSameInterfaceProperties(Assay, it)
                 })
+
+        def assays = mrnaResource.retrieveAssays([])
+        assertThat assays, contains(
+            testData.assays.sort { it.id }.collect {
+                hasSameInterfaceProperties(Assay, it)
+            })
     }
 
     @Test
@@ -82,6 +88,10 @@ class GeneralHighDimensionDataTypeResourceTests {
         shouldFail EmptySetException, {
             dataQueryResult = mrnaResource.retrieveData(
                     assayConstraints, dataConstraints, projection)
+        }
+
+        shouldFail EmptySetException, {
+            def assays = mrnaResource.retrieveAssays(assayConstraints)
         }
     }
 
