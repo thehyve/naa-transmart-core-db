@@ -59,7 +59,9 @@ class GzipFieldTokenizer {
                     action.apply(builder.toString())
                     builder.setLength(0)
                 } else {
-                    builder.append((char) c)
+                    // On OpenJDK 1.8 this `as` conversion is as fast as doing `(char) c`, so the JVM is able to inline
+                    // the conversion overhead.
+                    builder.append(c as char)
                 }
             }
 
