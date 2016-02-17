@@ -83,6 +83,26 @@ class SnpLzTestData {
         ]
     }()
 
+    List<DeSnpGeneMap> snpGeneMaps = {
+        def id = -600
+        annotations.collectMany { ann ->
+            List<DeSnpGeneMap> maps = []
+            for (String gene: ann.geneInfo.tokenize('|')) {
+                def parts = gene.tokenize(':')
+                def geneName = parts[0]
+                def geneId = parts[1]
+                def g = new DeSnpGeneMap(
+                        snpName:        ann.snpName,
+                        entrezGeneId:   geneId,
+                        geneName:       geneName
+                )
+                g.id = --id
+                maps += g
+            }
+            maps
+        }
+    }()
+
     @Lazy
     List<SnpSubjectSortedDef> sortedSubjects = {
         def id = -500
@@ -237,6 +257,7 @@ class SnpLzTestData {
         save patients
         save assays
         save annotations
+        save snpGeneMaps
         save sortedSubjects
         save data
     }

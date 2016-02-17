@@ -129,9 +129,11 @@ class SnpLzModule extends AbstractHighDimensionDataTypeModule {
                                  "for this data type (given: ${params['ids']}")
                      }
                      validateParameterNames(['names'], params)
+                     List<String> snpNames = getSnpNamesForGeneNames(processStringList('names', params.names))
+                     log.info "SNP names: ${snpNames}"
                      new PropertyDataConstraint(
-                             property: 'ann.geneInfo',
-                             values: processStringList('names', params.names))
+                             property: 'ann.snpName',
+                             values: snpNames)
                  }
          ),
         ]
@@ -154,6 +156,27 @@ class SnpLzModule extends AbstractHighDimensionDataTypeModule {
         }
 
         [new MapBasedParameterFactory(map)]
+    }
+
+    /**
+     * Get the SNP names for a list of gene names from {@link DeSnpGeneMap}.
+     *
+     * @return the list of SNP names.
+     */
+    List<String> getSnpNamesForGeneNames(List<String> geneNames) {
+        SortedSet<String> snpNames = [] as SortedSet
+        for (String geneName: geneNames) {
+            List<String> names = DeSnpGeneMap.createCriteria()
+            .list {
+                eq 'geneName', geneName
+                order 'snpName', 'asc'
+                projections {
+                  distinct('snpName')
+                }
+            }
+            snpNames.addAll(names)
+        }
+        snpNames.toList()
     }
 
     /**

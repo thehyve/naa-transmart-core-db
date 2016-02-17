@@ -278,7 +278,7 @@ class SnpLzEndToEndRetrievalTest {
 
     @Test
     void fetchFilterDataByGene() {
-        def gene = 'ND2:4536|COX1:4512'
+        def gene = 'ND2'
         def selectedAnnotation =
                 testData.annotations.find { it.geneInfo.contains(gene) }
 
