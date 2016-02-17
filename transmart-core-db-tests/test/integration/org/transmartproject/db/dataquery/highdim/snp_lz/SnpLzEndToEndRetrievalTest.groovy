@@ -146,9 +146,9 @@ class SnpLzEndToEndRetrievalTest {
         contains(
                 orderedSnpData.collect { SnpDataByProbeCoreDb snpData ->
                     allOf(
-                            hasProperty('snpName', is(snpData.snpInfo.name)),
-                            hasProperty('chromosome', is(snpData.snpInfo.chromosome)),
-                            hasProperty('position', is(snpData.snpInfo.pos)),
+                            hasProperty('snpName', is(snpData.genotypeProbeAnnotation.snpName)),
+                            hasProperty('chromosome', is(snpData.genotypeProbeAnnotation.chromosome)),
+                            hasProperty('position', is(snpData.genotypeProbeAnnotation.pos)),
                             contains(
                                     orderedSampleCodes.collect { sampleCode ->
                                         def gps = testData.sampleGps
@@ -278,7 +278,7 @@ class SnpLzEndToEndRetrievalTest {
 
     @Test
     void fetchFilterDataByGene() {
-        def gene = 'ND2'
+        def gene = 'ND2:4536|COX1:4512'
         def selectedAnnotation =
                 testData.annotations.find { it.geneInfo.contains(gene) }
 

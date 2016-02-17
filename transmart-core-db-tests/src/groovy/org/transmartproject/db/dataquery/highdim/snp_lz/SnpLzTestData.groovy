@@ -70,6 +70,7 @@ class SnpLzTestData {
                     pos: pos,
                     ref: ref,
                     alt: alt,
+                    genomeBuild: 'GRCh37',
             )
             res.id = id
             res
@@ -80,34 +81,6 @@ class SnpLzTestData {
                 createAnnotation(-111197028, 'rs1599988',   'ND1:4535', '1', 4216, 'C', 'G'),
                 createAnnotation(-111197178, 'rs199476129', 'ND2:4536|COX1:4512', '1', 5920, 'C', 'T'),
         ]
-    }()
-
-    List<DeSnpInfo> snpInfos = {
-        annotations.collect { ann ->
-            def r = new DeSnpInfo(
-                    name:       ann.snpName,
-                    chromosome: ann.chromosome,
-                    pos:        ann.pos,
-            )
-
-            r.id = ann.id * 10;
-            r
-        }
-    }()
-
-    List<DeRcSnpInfo> rcSnpInfos = {
-        annotations.collect { ann ->
-            def r = new DeRcSnpInfo(
-                    chromosome: ann.chromosome,
-                    pos:        ann.pos,
-                    hgVersion:  '19',
-                    geneName:   ann.geneInfo - ~/:.+/,
-                    entrezId:   ann.geneInfo - ~/.+?:/ - ~/\|.+/,
-            )
-
-            r.id = ann.id * 10; // must be the same as for DeSnpInfo
-            r
-        }
     }()
 
     @Lazy
@@ -216,11 +189,6 @@ class SnpLzTestData {
 
             assert !(null in gpss) && !(null in gtss) && !(null in doses)
 
-            def snpInfo = snpInfos.find {
-                it.pos == annotation.pos &&
-                        it.chromosome == annotation.chromosome }
-            assert snpInfo != null
-
             // Choose value of minorAllele based on the allele count, to vary its
             // value: to generate test cases for both 'A1' and 'A2'.
             long a1Count = 0
@@ -247,7 +215,6 @@ class SnpLzTestData {
                     gpsByProbeBlob: lobotomize(lobHelper, gpss.join(' ')),
                     gtsByProbeBlob: lobotomize(lobHelper, gtss.join(' ')),
                     doseByProbeBlob: lobotomize(lobHelper, doses.join(' ')),
-                    snpInfo: snpInfo,
             )
 
             r.id = id
@@ -270,8 +237,6 @@ class SnpLzTestData {
         save patients
         save assays
         save annotations
-        save snpInfos
-        save rcSnpInfos
         save sortedSubjects
         save data
     }
