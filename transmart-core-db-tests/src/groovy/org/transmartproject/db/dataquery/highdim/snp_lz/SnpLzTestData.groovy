@@ -70,6 +70,7 @@ class SnpLzTestData {
                     pos: pos,
                     ref: ref,
                     alt: alt,
+                    genomeBuild: 'GRCh37',
             )
             res.id = id
             res
@@ -82,31 +83,23 @@ class SnpLzTestData {
         ]
     }()
 
-    List<DeSnpInfo> snpInfos = {
-        annotations.collect { ann ->
-            def r = new DeSnpInfo(
-                    name:       ann.snpName,
-                    chromosome: ann.chromosome,
-                    pos:        ann.pos,
-            )
-
-            r.id = ann.id * 10;
-            r
-        }
-    }()
-
-    List<DeRcSnpInfo> rcSnpInfos = {
-        annotations.collect { ann ->
-            def r = new DeRcSnpInfo(
-                    chromosome: ann.chromosome,
-                    pos:        ann.pos,
-                    hgVersion:  '19',
-                    geneName:   ann.geneInfo - ~/:.+/,
-                    entrezId:   ann.geneInfo - ~/.+?:/ - ~/\|.+/,
-            )
-
-            r.id = ann.id * 10; // must be the same as for DeSnpInfo
-            r
+    List<DeSnpGeneMap> snpGeneMaps = {
+        def id = -600
+        annotations.collectMany { ann ->
+            List<DeSnpGeneMap> maps = []
+            for (String gene: ann.geneInfo.tokenize('|')) {
+                def parts = gene.tokenize(':')
+                def geneName = parts[0]
+                def geneId = parts[1]
+                def g = new DeSnpGeneMap(
+                        snpName:        ann.snpName,
+                        entrezGeneId:   geneId,
+                        geneName:       geneName
+                )
+                g.id = --id
+                maps += g
+            }
+            maps
         }
     }()
 
@@ -216,11 +209,6 @@ class SnpLzTestData {
 
             assert !(null in gpss) && !(null in gtss) && !(null in doses)
 
-            def snpInfo = snpInfos.find {
-                it.pos == annotation.pos &&
-                        it.chromosome == annotation.chromosome }
-            assert snpInfo != null
-
             // Choose value of minorAllele based on the allele count, to vary its
             // value: to generate test cases for both 'A1' and 'A2'.
             long a1Count = 0
@@ -247,7 +235,6 @@ class SnpLzTestData {
                     gpsByProbeBlob: lobotomize(lobHelper, gpss.join(' ')),
                     gtsByProbeBlob: lobotomize(lobHelper, gtss.join(' ')),
                     doseByProbeBlob: lobotomize(lobHelper, doses.join(' ')),
-                    snpInfo: snpInfo,
             )
 
             r.id = id
@@ -270,8 +257,7 @@ class SnpLzTestData {
         save patients
         save assays
         save annotations
-        save snpInfos
-        save rcSnpInfos
+        save snpGeneMaps
         save sortedSubjects
         save data
     }
