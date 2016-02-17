@@ -43,6 +43,7 @@ import org.transmartproject.db.dataquery.highdim.chromoregion.ChromosomeSegmentC
 import org.transmartproject.db.dataquery.highdim.dataconstraints.PropertyDataConstraint
 import org.transmartproject.db.dataquery.highdim.parameterproducers.DataRetrievalParameterFactory
 import org.transmartproject.db.dataquery.highdim.parameterproducers.MapBasedParameterFactory
+import org.transmartproject.db.dataquery.highdim.snp_lz.SnpGeneNameConstraint
 
 import static org.hibernate.sql.JoinFragment.INNER_JOIN
 import static org.hibernate.sql.JoinFragment.LEFT_OUTER_JOIN
@@ -129,11 +130,9 @@ class SnpLzModule extends AbstractHighDimensionDataTypeModule {
                                  "for this data type (given: ${params['ids']}")
                      }
                      validateParameterNames(['names'], params)
-                     List<String> snpNames = getSnpNamesForGeneNames(processStringList('names', params.names))
-                     log.info "SNP names: ${snpNames}"
-                     new PropertyDataConstraint(
+                     new SnpGeneNameConstraint(
                              property: 'ann.snpName',
-                             values: snpNames)
+                             geneNames: processStringList('names', params.names))
                  }
          ),
         ]
@@ -156,27 +155,6 @@ class SnpLzModule extends AbstractHighDimensionDataTypeModule {
         }
 
         [new MapBasedParameterFactory(map)]
-    }
-
-    /**
-     * Get the SNP names for a list of gene names from {@link DeSnpGeneMap}.
-     *
-     * @return the list of SNP names.
-     */
-    List<String> getSnpNamesForGeneNames(List<String> geneNames) {
-        SortedSet<String> snpNames = [] as SortedSet
-        for (String geneName: geneNames) {
-            List<String> names = DeSnpGeneMap.createCriteria()
-            .list {
-                eq 'geneName', geneName
-                order 'snpName', 'asc'
-                projections {
-                  distinct('snpName')
-                }
-            }
-            snpNames.addAll(names)
-        }
-        snpNames.toList()
     }
 
     /**
