@@ -27,29 +27,87 @@ import org.hibernate.LobHelper
 import org.transmartproject.db.dataquery.highdim.DeGplInfo
 import org.transmartproject.db.dataquery.highdim.DeSubjectSampleMapping
 import org.transmartproject.db.dataquery.highdim.HighDimTestData
+import org.transmartproject.db.i2b2data.ConceptDimension
 import org.transmartproject.db.i2b2data.PatientDimension
+import org.transmartproject.db.ontology.I2b2;
+import org.transmartproject.db.ontology.TableAccess;
 
+import static org.transmartproject.db.ontology.ConceptTestData.createI2b2
+import static org.transmartproject.db.ontology.ConceptTestData.createI2b2Concept
+import static org.transmartproject.db.ontology.ConceptTestData.createTableAccess
+import static org.transmartproject.db.ontology.ConceptTestData.createConceptDimensions
+
+import java.util.List;
 import java.util.zip.GZIPOutputStream
 
 import static org.transmartproject.db.dataquery.highdim.HighDimTestData.save
 
 class SnpLzTestData {
     public static final String TRIAL_NAME = 'CARDS'
+    public static final String CONCEPT_PATH = "\\\\i2b2 main\\foo\\${TRIAL_NAME}\\concept code #1"
+    public static final String PLATFORM = 'Perlegen_600k'
+    public List<String> conceptCodes = ['concept code #1', 'concept code #2']
 
     List<DeSubjectSampleMapping> assays
 
-    SnpLzTestData(String conceptCode = 'concept code #1') {
+    SnpLzTestData() {
         assays = HighDimTestData.createTestAssays(
-                patients, -400, platform, TRIAL_NAME, conceptCode)
+                patients, -400, platforms[0], TRIAL_NAME, concepts[1].conceptCode, platforms[0].title)
+        assays += HighDimTestData.createTestAssays(
+                patients, -200, platforms[1], TRIAL_NAME, concepts[2].conceptCode, platforms[1].title)
     }
 
-    DeGplInfo platform = {
-        def res = new DeGplInfo(
-                title: 'Perlegen_600k',
-                organism: 'Homo Sapiens',
-                markerType: 'SNP')
-        res.id = 'Perlegen_600k'
-        res
+    List<TableAccess> i2b2TopConcepts = [
+        createTableAccess(level: 0, fullName: '\\foo\\', name: 'foo',
+                tableCode: 'i2b2 main', tableName: 'i2b2'),
+    ]
+
+    List<I2b2> i2b2Concepts = [
+            createI2b2Concept(code: 1, level: 1, fullName: "\\foo\\${TRIAL_NAME}\\", name: TRIAL_NAME),
+            createI2b2Concept(code: 2, level: 2, fullName: "\\foo\\${TRIAL_NAME}\\${conceptCodes[0]}\\", name: conceptCodes[0]),
+            createI2b2Concept(code: 3, level: 2, fullName: "\\foo\\${TRIAL_NAME}\\${conceptCodes[1]}\\", name: conceptCodes[1]),
+    ]
+
+    List<ConceptDimension> concepts = createConceptDimensions(i2b2Concepts)
+
+    List<DeGplInfo> platforms = {
+        def createPlatform = { title,
+                               organism,
+                               markerType ->
+            def res = new DeGplInfo(
+                    title: title,
+                    organism: organism,
+                    markerType: markerType)
+            res.id = title
+            res
+        }
+        [
+            createPlatform('Perlegen_600k', 'Homo Sapiens', 'SNP'),
+            createPlatform('CARDSSNP', 'Homo Sapiens', 'SNP'),
+        ]
+    }()
+
+    List<CoreBioAssayPlatform> bioAssayPlatforms = {
+        def id = -800
+        platforms.collect { platform ->
+            def p = new CoreBioAssayPlatform(
+                    accession:  platform.id,
+                    organism:   platform.organism,
+                    type:       platform.markerType
+            )
+            p.id = --id
+            p
+        }
+    }()
+
+    List<BioAssayGenoPlatformProbe> bioAssayGenoPlatformProbes = {
+        def id = -1200
+        bioAssayPlatforms.collect { bioAssayPlatform ->
+            def bagpp = new BioAssayGenoPlatformProbe(
+                    bioAssayPlatform: bioAssayPlatform)
+            bagpp.id = --id
+            bagpp
+        }
     }()
 
     List<PatientDimension> patients =
@@ -108,10 +166,14 @@ class SnpLzTestData {
         def id = -500
         def pos = 1 /* positions are 1-based */
         assays.collect { assay ->
+            def bioAssayPlatform = bioAssayPlatforms.find {
+                it.accession == assay.platform.id
+            }
             def s = new SnpSubjectSortedDef(
                     trialName: TRIAL_NAME,
                     patientPosition: pos++,
                     patient: assay.patient,
+                    bioAssayPlatform: bioAssayPlatform,
                     subjectId: assay.sampleCode,
             )
             s.id = --id
@@ -125,7 +187,23 @@ class SnpLzTestData {
     }*.sampleCode
 
     @Lazy
+    def orderedSampleCodesByPlatform = platforms.collectEntries { platform ->
+        [(platform.id):
+            assays.findAll { it.platform.id == platform.id }.sort { a ->
+                sortedSubjects.find { it.subjectId == a.sampleCode }.patientPosition
+            }*.sampleCode
+        ]
+    }
+
+    @Lazy
     def orderedAssays = assays.sort { it.id }
+
+    @Lazy
+    def orderedAssaysByPlatform = platforms.collectEntries { platform ->
+        [(platform.id):
+            assays.findAll { it.platform.id == platform.id }.sort { it.id }
+        ]
+    }
 
     @Lazy
     Table<String /* sample code*/, String /* rs id */, String /* triplet */> sampleGps = {
@@ -142,6 +220,18 @@ class SnpLzTestData {
         tb.put assays[2].sampleCode, annotations[0].snpName, '0 0 1'
         tb.put assays[2].sampleCode, annotations[1].snpName, '0 0 1'
         tb.put assays[2].sampleCode, annotations[2].snpName, '0 1 0'
+
+        tb.put assays[3].sampleCode, annotations[0].snpName, '0 0 1'
+        tb.put assays[3].sampleCode, annotations[1].snpName, '0 1 0'
+        tb.put assays[3].sampleCode, annotations[2].snpName, '0 0 0'
+
+        tb.put assays[4].sampleCode, annotations[0].snpName, '1 0 0'
+        tb.put assays[4].sampleCode, annotations[1].snpName, '0 0 0'
+        tb.put assays[4].sampleCode, annotations[2].snpName, '1 0 0'
+
+        tb.put assays[5].sampleCode, annotations[0].snpName, '0 0 1'
+        tb.put assays[5].sampleCode, annotations[1].snpName, '0 0 1'
+        tb.put assays[5].sampleCode, annotations[2].snpName, '0 1 0'
 
         tb.build()
     }()
@@ -162,6 +252,18 @@ class SnpLzTestData {
         tb.put assays[2].sampleCode, annotations[1].snpName, 'A A'
         tb.put assays[2].sampleCode, annotations[2].snpName, 'A T'
 
+        tb.put assays[3].sampleCode, annotations[0].snpName, 'A A'
+        tb.put assays[3].sampleCode, annotations[1].snpName, 'A T'
+        tb.put assays[3].sampleCode, annotations[2].snpName, 'N N'
+
+        tb.put assays[4].sampleCode, annotations[0].snpName, 'T T'
+        tb.put assays[4].sampleCode, annotations[1].snpName, 'N N'
+        tb.put assays[4].sampleCode, annotations[2].snpName, 'T T'
+
+        tb.put assays[5].sampleCode, annotations[0].snpName, 'A A'
+        tb.put assays[5].sampleCode, annotations[1].snpName, 'A A'
+        tb.put assays[5].sampleCode, annotations[2].snpName, 'A T'
+
         tb.build()
     }()
 
@@ -180,6 +282,18 @@ class SnpLzTestData {
         tb.put assays[2].sampleCode, annotations[0].snpName, '0'
         tb.put assays[2].sampleCode, annotations[1].snpName, '0'
         tb.put assays[2].sampleCode, annotations[2].snpName, '1'
+
+        tb.put assays[3].sampleCode, annotations[0].snpName, '0'
+        tb.put assays[3].sampleCode, annotations[1].snpName, '1'
+        tb.put assays[3].sampleCode, annotations[2].snpName, '0'
+
+        tb.put assays[4].sampleCode, annotations[0].snpName, '2'
+        tb.put assays[4].sampleCode, annotations[1].snpName, '0'
+        tb.put assays[4].sampleCode, annotations[2].snpName, '2'
+
+        tb.put assays[5].sampleCode, annotations[0].snpName, '0'
+        tb.put assays[5].sampleCode, annotations[1].snpName, '0'
+        tb.put assays[5].sampleCode, annotations[2].snpName, '1'
 
         tb.build()
     }()
@@ -200,6 +314,7 @@ class SnpLzTestData {
 
         def createDataEntry = { id,
                                 GenotypeProbeAnnotation annotation,
+                                BioAssayGenoPlatformProbe platformProbe, 
                                 /* these are by order of patient */
                                 List<String> gpss /* ['0 0 1', '0 1 0', ...] */,
                                 gtss /* ['T T', 'T A', ...] */,
@@ -232,6 +347,7 @@ class SnpLzTestData {
                     CA2A2: gtss.count { "$a2 $a2" },
                     CNocall: gtss.count { 'N N' },
                     genotypeProbeAnnotation: annotation,
+                    bioAssayGenoPlatform: platformProbe,
                     gpsByProbeBlob: lobotomize(lobHelper, gpss.join(' ')),
                     gtsByProbeBlob: lobotomize(lobHelper, gtss.join(' ')),
                     doseByProbeBlob: lobotomize(lobHelper, doses.join(' ')),
@@ -242,18 +358,27 @@ class SnpLzTestData {
         }
 
         def i = -700
-        annotations.collect { ann ->
-            createDataEntry(
-                    --i,
-                    ann,
-                    orderedSampleCodes.collect { sc -> sampleGps.get(sc, ann.snpName) },
-                    orderedSampleCodes.collect { sc -> sampleGts.get(sc, ann.snpName) },
-                    orderedSampleCodes.collect { sc -> sampleDoses.get(sc, ann.snpName) })
+        annotations.collectMany { ann ->
+            bioAssayGenoPlatformProbes.collect { BioAssayGenoPlatformProbe platformProbe ->
+                def sampleCodes = orderedSampleCodesByPlatform[platformProbe.bioAssayPlatform.accession]
+                createDataEntry(
+                        --i,
+                        ann,
+                        platformProbe,
+                        sampleCodes.collect { sc -> sampleGps.get(sc, ann.snpName) },
+                        sampleCodes.collect { sc -> sampleGts.get(sc, ann.snpName) },
+                        sampleCodes.collect { sc -> sampleDoses.get(sc, ann.snpName) })
+            }
         }
     }()
 
     void saveAll() {
-        save([platform])
+        save i2b2TopConcepts
+        save i2b2Concepts
+        save concepts
+        save platforms
+        save bioAssayPlatforms
+        save bioAssayGenoPlatformProbes
         save patients
         save assays
         save annotations
