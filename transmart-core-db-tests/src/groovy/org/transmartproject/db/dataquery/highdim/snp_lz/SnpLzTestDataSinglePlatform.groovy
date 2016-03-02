@@ -42,19 +42,17 @@ import java.util.zip.GZIPOutputStream
 
 import static org.transmartproject.db.dataquery.highdim.HighDimTestData.save
 
-class SnpLzTestData {
+class SnpLzTestDataSinglePlatform {
     public static final String TRIAL_NAME = 'CARDS'
     public static final String CONCEPT_PATH = "\\\\i2b2 main\\foo\\${TRIAL_NAME}\\concept code #1"
     public static final String PLATFORM = 'Perlegen_600k'
-    public List<String> conceptCodes = ['concept code #1', 'concept code #2']
+    public List<String> conceptCodes = ['concept code #1']
 
     List<DeSubjectSampleMapping> assays
 
-    SnpLzTestData() {
+    SnpLzTestDataSinglePlatform() {
         assays = HighDimTestData.createTestAssays(
                 patients, -400, platforms[0], TRIAL_NAME, concepts[1].conceptCode, platforms[0].title)
-        assays += HighDimTestData.createTestAssays(
-                patients, -200, platforms[1], TRIAL_NAME, concepts[2].conceptCode, platforms[1].title)
     }
 
     List<TableAccess> i2b2TopConcepts = [
@@ -65,7 +63,6 @@ class SnpLzTestData {
     List<I2b2> i2b2Concepts = [
             createI2b2Concept(code: 1, level: 1, fullName: "\\foo\\${TRIAL_NAME}\\", name: TRIAL_NAME),
             createI2b2Concept(code: 2, level: 2, fullName: "\\foo\\${TRIAL_NAME}\\${conceptCodes[0]}\\", name: conceptCodes[0]),
-            createI2b2Concept(code: 3, level: 2, fullName: "\\foo\\${TRIAL_NAME}\\${conceptCodes[1]}\\", name: conceptCodes[1]),
     ]
 
     List<ConceptDimension> concepts = createConceptDimensions(i2b2Concepts)
@@ -83,7 +80,6 @@ class SnpLzTestData {
         }
         [
             createPlatform('Perlegen_600k', 'Homo Sapiens', 'SNP'),
-            createPlatform('CARDSSNP', 'Homo Sapiens', 'SNP'),
         ]
     }()
 
@@ -221,18 +217,6 @@ class SnpLzTestData {
         tb.put assays[2].sampleCode, annotations[1].snpName, '0 0 1'
         tb.put assays[2].sampleCode, annotations[2].snpName, '0 1 0'
 
-        tb.put assays[3].sampleCode, annotations[0].snpName, '0 0 1'
-        tb.put assays[3].sampleCode, annotations[1].snpName, '0 1 0'
-        tb.put assays[3].sampleCode, annotations[2].snpName, '0 0 0'
-
-        tb.put assays[4].sampleCode, annotations[0].snpName, '1 0 0'
-        tb.put assays[4].sampleCode, annotations[1].snpName, '0 0 0'
-        tb.put assays[4].sampleCode, annotations[2].snpName, '1 0 0'
-
-        tb.put assays[5].sampleCode, annotations[0].snpName, '0 0 1'
-        tb.put assays[5].sampleCode, annotations[1].snpName, '0 0 1'
-        tb.put assays[5].sampleCode, annotations[2].snpName, '0 1 0'
-
         tb.build()
     }()
 
@@ -252,18 +236,6 @@ class SnpLzTestData {
         tb.put assays[2].sampleCode, annotations[1].snpName, 'A A'
         tb.put assays[2].sampleCode, annotations[2].snpName, 'A T'
 
-        tb.put assays[3].sampleCode, annotations[0].snpName, 'A A'
-        tb.put assays[3].sampleCode, annotations[1].snpName, 'A T'
-        tb.put assays[3].sampleCode, annotations[2].snpName, 'N N'
-
-        tb.put assays[4].sampleCode, annotations[0].snpName, 'T T'
-        tb.put assays[4].sampleCode, annotations[1].snpName, 'N N'
-        tb.put assays[4].sampleCode, annotations[2].snpName, 'T T'
-
-        tb.put assays[5].sampleCode, annotations[0].snpName, 'A A'
-        tb.put assays[5].sampleCode, annotations[1].snpName, 'A A'
-        tb.put assays[5].sampleCode, annotations[2].snpName, 'A T'
-
         tb.build()
     }()
 
@@ -282,18 +254,6 @@ class SnpLzTestData {
         tb.put assays[2].sampleCode, annotations[0].snpName, '0'
         tb.put assays[2].sampleCode, annotations[1].snpName, '0'
         tb.put assays[2].sampleCode, annotations[2].snpName, '1'
-
-        tb.put assays[3].sampleCode, annotations[0].snpName, '0'
-        tb.put assays[3].sampleCode, annotations[1].snpName, '1'
-        tb.put assays[3].sampleCode, annotations[2].snpName, '0'
-
-        tb.put assays[4].sampleCode, annotations[0].snpName, '2'
-        tb.put assays[4].sampleCode, annotations[1].snpName, '0'
-        tb.put assays[4].sampleCode, annotations[2].snpName, '2'
-
-        tb.put assays[5].sampleCode, annotations[0].snpName, '0'
-        tb.put assays[5].sampleCode, annotations[1].snpName, '0'
-        tb.put assays[5].sampleCode, annotations[2].snpName, '1'
 
         tb.build()
     }()

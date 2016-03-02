@@ -39,7 +39,7 @@ import org.transmartproject.db.dataquery.highdim.protein.ProteinTestData
 import org.transmartproject.db.dataquery.highdim.rbm.RbmTestData
 import org.transmartproject.db.dataquery.highdim.rnaseq.RnaSeqTestData
 import org.transmartproject.db.dataquery.highdim.rnaseqcog.RnaSeqCogTestData
-import org.transmartproject.db.dataquery.highdim.snp_lz.SnpLzTestData
+import org.transmartproject.db.dataquery.highdim.snp_lz.SnpLzTestDataSinglePlatform
 import org.transmartproject.db.dataquery.highdim.vcf.VcfTestData
 import org.transmartproject.db.test.RuleBasedIntegrationTestMixin
 
@@ -122,7 +122,7 @@ class HighDimensionAllDataTests {
              imputeQuality:BigDecimal, GTProbabilityThreshold:BigDecimal,
              minorAlleleFrequency:BigDecimal, minorAllele:String,
              a1a1Count:Long, a1a2Count:Long, a2a2Count:Long, noCallCount:Long],
-            SnpLzTestData
+            SnpLzTestDataSinglePlatform
         ]
     ].collect {it.toArray()}}
 
