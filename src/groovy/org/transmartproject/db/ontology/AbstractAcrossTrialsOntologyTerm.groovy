@@ -94,6 +94,8 @@ abstract class AbstractAcrossTrialsOntologyTerm
                 eq 'level',
                         level - 1L /* "Across Trials" */ + 1L /* children */
             }
+
+            fetchSize 10000
         }.collect { new AcrossTrialsOntologyTerm(modifierDimension: it) }
     }
 
